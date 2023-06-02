@@ -6,6 +6,13 @@ import com.mobile.mobileshop.UserSignIn;
 import java.util.Scanner;
 
 public class WelcomeScreen {
+    private static final int LOGIN = 1;
+    private static final int REGISTER = 2;
+    private static final int USEWEI = 3;
+    private static final int RECHARGE = 4;
+    private static final int DESCRIPTION = 5;
+    private static final int EXIT = 6;
+
     static {
         //欢迎界面字符
         System.out.println("**********************欢迎使用WEI移动业务大厅**********************");
@@ -13,9 +20,10 @@ public class WelcomeScreen {
         search();
     }
 
-    public static void search(){
+    public static void search() {
         Scanner sc = new Scanner(System.in);
         Users u = new Users();
+        loop:
         while (true) {
             System.out.println("------------------------------------------------------------------------");
             System.out.println("1.用户登录\t2.用户注册\t3.使用WEI\t4.话费充值\t5.资费说明\t6.退出系统");
@@ -26,12 +34,15 @@ public class WelcomeScreen {
                 int num = Integer.parseInt(strNum);
                 u.setNum(num);
                 switch (u.getNum()) {
-                    case 1 -> new UserSignIn();
-                    case 2 -> System.out.println("用户注册");
-                    case 3 -> System.out.println("使用WEI");
-                    case 4 -> System.out.println("话费充值");
-                    case 5 -> System.out.println("资费说明");
-                    case 6 -> System.out.println("退出系统");
+                    case LOGIN -> new UserSignIn();
+                    case REGISTER -> System.out.println("用户注册");
+                    case USEWEI -> System.out.println("使用WEI");
+                    case RECHARGE -> System.out.println("话费充值");
+                    case DESCRIPTION -> System.out.println("资费说明");
+                    case EXIT -> {
+                        System.out.println("谢谢使用,再见.");
+                        break loop;
+                    }
                 }
                 break;
             } catch (NumberFormatException | NoneFoundNumberException e) {
