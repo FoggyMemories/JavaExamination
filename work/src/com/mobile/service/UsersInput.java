@@ -1,6 +1,6 @@
-package com.mobile.test;
+package com.mobile.service;
 
-public class Test {
+public class UsersInput {
     public static void main(String[] args) {
 
     }
