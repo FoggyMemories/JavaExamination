@@ -32,7 +32,7 @@ public class UsersInput {
      */
     public void setWelcomeNum(int welcomeNum) {
         if (welcomeNum < 1 || welcomeNum > 6) {
-            throw new NoneFoundNumberException("请输入 1 ~ 6 之间的整数");
+            throw new NoneFoundNumberException();
         }
         this.WelcomeNum = welcomeNum;
     }

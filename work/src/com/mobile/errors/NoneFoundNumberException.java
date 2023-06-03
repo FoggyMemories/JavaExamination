@@ -5,7 +5,6 @@ public class NoneFoundNumberException extends RuntimeException {
     }
 
     public NoneFoundNumberException(String message) {
-        System.err.println(message);
-        System.out.println("------------------------------------------------------------------------");
+        super(message);
     }
 }

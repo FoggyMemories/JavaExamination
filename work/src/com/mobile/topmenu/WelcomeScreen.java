@@ -50,8 +50,10 @@ public class WelcomeScreen {
                     }
                 }
                 break;
-            } catch (NumberFormatException | NoneFoundNumberException e) {
-                e.printStackTrace();
+            } catch (NumberFormatException e) {
+                System.out.println("输入的格式不合法,请重新输入.");
+            } catch (NoneFoundNumberException e) {
+                System.out.println("请输入 1 ~ 6 之间的整数");
             }
         }
 

@@ -5,9 +5,8 @@ import com.mobile.mobilemenu.UesWEI;
 import com.mobile.mobileshop.MobileCard;
 import com.mobile.util.CardUtil;
 
-import java.security.Key;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -35,9 +34,10 @@ public class UsersLogin {
                 //引入总库,对比手机号是否存在
                 CardUtil cardUtil = new CardUtil();
                 HashMap<String, MobileCard> cards = cardUtil.getHashMap();
-                Set<String> set = cards.keySet();
+                Set<String> keys = cards.keySet();
+                Collection<MobileCard> values = cards.values();
 
-                for (String s : set) {
+                for (String s : keys) {
                     boolean b1 = c.getCardNumber().equals(s);
                     if (b || b1) {
                         System.out.println("手机号不存在,请重新输入手机号");
@@ -45,53 +45,52 @@ public class UsersLogin {
                     }
                 }
                 System.out.println("手机号合法");
+                //密码部分暂时挂起
+                System.out.print("请输入密码:");
+                String passWord = sc.nextLine();
+
+                for (MobileCard value : values) {
+                    String passWord1 = value.getPassWord();
+                    if (matePassWord(passWord, passWord1)) {
+                        System.out.println("您输入的密码正确");
+                        new UesWEI();
+                    } else {
+                        System.out.println("您输入的密码有误");
+                    }
+                }
+
                 break;
             } catch (NumberFormatException e) {
-                e.printStackTrace();
+                System.out.println("输入的为非数字,请重新输入");
             }
         }
 
 
-        //密码部分暂时挂起
-        System.out.print("请输入密码:");
-        String passWord = sc.nextLine();
-        if (matePassWord(passWord)) {
-            System.out.println("您输入的密码正确");
-            new UesWEI();
-        } else {
-            System.out.println("您输入的密码有误");
-        }
-
     }
 
 
-    //判断密码是否合法
     public static boolean judgePassWord(String passWord) {
 
-        //密码判断暂时挂起
-
-        /*//万能密码
+        //万能密码
         String regexAll = "123";
 
         //密码长度8-16位、至少包含数字、一个小写字母、一个大写字母、一个特殊符号
         String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,16}$";
 
-        if(!passWord.matches(regex) || !passWord.matches(regexAll)){
+        if (!passWord.matches(regex) && !passWord.matches(regexAll)) {
             System.out.println("您输入的密码格式有误(密码长度8-16位、至少包含数字、一个小写字母、一个大写字母、一个特殊符号)");
             return false;
         }
-        */
 
         return true;
     }
 
     //判断密码是否正确
-    public static boolean matePassWord(String passWord) {
+    public static boolean matePassWord(String passWord, String passWord1) {
 
-        /*judgePassWord(passWord);
-        String passWordTemp = "123";
-        boolean b = judgePassWord(passWordTemp) || passWord.equals(passWordTemp);*/
+        boolean b = judgePassWord(passWord);
+        boolean b1 = passWord.equals(passWord1);
 
-        return true;
+        return b & b1;
     }
 }
