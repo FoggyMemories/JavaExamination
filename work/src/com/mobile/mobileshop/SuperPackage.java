@@ -1,86 +1,35 @@
 package com.mobile.mobileshop;
 
-public class SuperPackage extends ServicePackage {
-    private int talkTime;
-    private int smsCount;
-    private int flow;
-    private double price;
+import com.mobile.service.CallService;
+import com.mobile.service.NetService;
+import com.mobile.service.SendService;
+
+public class SuperPackage extends ServicePackage implements CallService, SendService, NetService {
+
 
     public SuperPackage() {
+        super.setTalkTime(200);
+        super.setFlow(10 * 1024);
+        super.setSmsCount(50);
+        super.setPrice(78);
     }
 
-    public SuperPackage(int talkTime, int smsCount, int flow, double price) {
-        this.talkTime = talkTime;
-        this.smsCount = smsCount;
-        this.flow = flow;
-        this.price = price;
+    public SuperPackage(int talkTime, int flow, int smsCount, double price, Object pack) {
+        super(talkTime, flow, smsCount, price, pack);
     }
 
-    /**
-     * 获取
-     * @return talkTime
-     */
-    public int getTalkTime() {
-        return talkTime;
+    @Override
+    public int sendMessage(int count, MobileCard card) {
+        return 1;
     }
 
-    /**
-     * 设置
-     * @param talkTime
-     */
-    public void setTalkTime(int talkTime) {
-        this.talkTime = talkTime;
+    @Override
+    public int call(int minCount, MobileCard card) {
+        return 0;
     }
 
-    /**
-     * 获取
-     * @return smsCount
-     */
-    public int getSmsCount() {
-        return smsCount;
-    }
-
-    /**
-     * 设置
-     * @param smsCount
-     */
-    public void setSmsCount(int smsCount) {
-        this.smsCount = smsCount;
-    }
-
-    /**
-     * 获取
-     * @return flow
-     */
-    public int getFlow() {
-        return flow;
-    }
-
-    /**
-     * 设置
-     * @param flow
-     */
-    public void setFlow(int flow) {
-        this.flow = flow;
-    }
-
-    /**
-     * 获取
-     * @return price
-     */
-    public double getPrice() {
-        return price;
-    }
-
-    /**
-     * 设置
-     * @param price
-     */
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String toString() {
-        return "通话时间:" + talkTime + ",信息条数:" + smsCount + ",价格:" + price + ",流量:" + flow;
+    @Override
+    public int netPlay(int flow, MobileCard card) {
+        return 0;
     }
 }
