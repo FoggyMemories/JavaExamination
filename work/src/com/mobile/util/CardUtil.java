@@ -22,10 +22,10 @@ public class CardUtil {
 
 
 
-        cards.put("13956482685", card1);
-        cards.put("13956486685", card2);
-        cards.put("13956472685", card3);
-        cards.put("13956482585", card4);
+        cards.put(card1.getCardNumber(), card1);
+        cards.put(card2.getCardNumber(), card2);
+        cards.put(card3.getCardNumber(), card3);
+        cards.put(card4.getCardNumber(), card4);
 
         return cards;
     }
