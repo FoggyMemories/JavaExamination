@@ -9,12 +9,13 @@ public class UserSignIn {
 
         while (true) {
             System.out.print("请输入手机卡号:");
+            loop:
             try {
                 String phoneNumber = sc.nextLine();
                 Long.parseLong(phoneNumber);
                 if (!judgePhoneNumber(phoneNumber)) {
                     System.out.println("手机号不合法");
-                    break;
+                    break loop;
                 }
                 System.out.println("手机号合法");
                 break;
