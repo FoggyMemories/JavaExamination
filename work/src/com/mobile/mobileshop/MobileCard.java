@@ -73,7 +73,7 @@ public class MobileCard {
     /**
      * 设置
      *
-     * @param cardNumber setCardNumber
+     * @param cardNumber
      */
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
@@ -163,7 +163,7 @@ public class MobileCard {
     /**
      * 设置
      *
-     * @param realFlow setRealFlow
+     * @param realFlow
      */
     public void setRealFlow(int realFlow) {
         this.realFlow = realFlow;
