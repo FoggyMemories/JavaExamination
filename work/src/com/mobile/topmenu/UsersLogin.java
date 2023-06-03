@@ -1,10 +1,11 @@
-package com.mobile.service;
+package com.mobile.topmenu;
 
+import com.mobile.data.CustomerInfo;
 import com.mobile.mobilemenu.UesWEI;
 
 import java.util.Scanner;
 
-import static com.mobile.util.judge.judgePhoneNumber;
+import static com.mobile.util.judgeUtil.judgePhoneNumber;
 
 
 //用户登录
@@ -14,12 +15,14 @@ public class UsersLogin {
 
 
         while (true) {
+            CustomerInfo c = new CustomerInfo();
             System.out.print("请输入手机卡号:");
             loop:
             try {
                 String phoneNumber = sc.nextLine();
-                Long.parseLong(phoneNumber);
-                if (!judgePhoneNumber(phoneNumber)) {
+                c.setCardNumber(phoneNumber);
+                Long.parseLong(c.getCardNumber());
+                if (!judgePhoneNumber(c.getCardNumber())) {
                     System.out.println("手机号不合法,请重新输入手机号");
                     break loop;
                 }

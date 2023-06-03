@@ -1,6 +1,6 @@
 package com.mobile.util;
 
-public class judge {
+public class judgeUtil {
     //使用正则表达式判断输入的手机卡号是否合法
     public static boolean judgePhoneNumber(String phoneNumber) {
         //根据工信部2019年最新公布手机号段

@@ -1,7 +1,7 @@
 package com.mobile.mobilemenu;
 
 
-import com.mobile.service.UsersInput;
+import com.mobile.topmenu.UsersInput;
 
 import java.util.Scanner;
 

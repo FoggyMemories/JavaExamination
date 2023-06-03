@@ -1,9 +1,9 @@
-package com.mobile.service;
+package com.mobile.topmenu;
 
 
 import java.util.Scanner;
 
-import static com.mobile.util.judge.judgePhoneNumber;
+import static com.mobile.util.judgeUtil.judgePhoneNumber;
 
 //话费充值
 public class TariffRecharge {
