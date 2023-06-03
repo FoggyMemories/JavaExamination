@@ -18,10 +18,6 @@ public class SuperPackage extends ServicePackage implements CallService, SendSer
         super(talkTime, flow, smsCount, price, pack);
     }
 
-    @Override
-    public int sendMessage(int count, MobileCard card) {
-        return 1;
-    }
 
     @Override
     public int call(int minCount, MobileCard card) {
@@ -30,6 +26,11 @@ public class SuperPackage extends ServicePackage implements CallService, SendSer
 
     @Override
     public int netPlay(int flow, MobileCard card) {
+        return 0;
+    }
+
+    @Override
+    public int sendMessage(int count, MobileCard card) {
         return 0;
     }
 }

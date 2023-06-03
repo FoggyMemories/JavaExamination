@@ -5,7 +5,6 @@ import com.mobile.mobileshop.NetPackage;
 import com.mobile.mobileshop.SuperPackage;
 import com.mobile.mobileshop.TalkPackage;
 
-import java.util.Collections;
 import java.util.HashMap;
 
 public class CardUtil {
