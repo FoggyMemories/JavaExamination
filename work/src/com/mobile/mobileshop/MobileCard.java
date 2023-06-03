@@ -3,35 +3,26 @@ package com.mobile.mobileshop;
 public class MobileCard {
     private String userName;
     private String passWord;
+    private String cardNumber;
     private ServicePackage serPackage;
     private double customerAmount;
-    private double money;
     private int realTalkTime;
     private int realSMSCount;
     private int realFlow;
-    private String cardNumber;
 
-    public MobileCard(String userName, String cardNumber, String passWord, ServicePackage serPackage,
-                      double customerAmount, double money) {
-        super();
-        this.cardNumber = cardNumber;
-        this.userName = userName;
-        this.passWord = passWord;
-        this.serPackage = serPackage;
-        this.customerAmount = customerAmount;
-        this.money = money;
+
+    public MobileCard() {
     }
 
-    public MobileCard(String userName, String passWord, ServicePackage serPackage, double customerAmount, double money, int realTalkTime, int realSMSCount, int realFlow, String cardNumber) {
+    public MobileCard(String userName, String passWord, String cardNumber, ServicePackage serPackage, double customerAmount, int realTalkTime, int realSMSCount, int realFlow) {
         this.userName = userName;
         this.passWord = passWord;
+        this.cardNumber = cardNumber;
         this.serPackage = serPackage;
         this.customerAmount = customerAmount;
-        this.money = money;
         this.realTalkTime = realTalkTime;
         this.realSMSCount = realSMSCount;
         this.realFlow = realFlow;
-        this.cardNumber = cardNumber;
     }
 
     /**
@@ -73,6 +64,24 @@ public class MobileCard {
     /**
      * 获取
      *
+     * @return cardNumber
+     */
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    /**
+     * 设置
+     *
+     * @param cardNumber setCardNumber
+     */
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    /**
+     * 获取
+     *
      * @return serPackage
      */
     public ServicePackage getSerPackage() {
@@ -104,24 +113,6 @@ public class MobileCard {
      */
     public void setCustomerAmount(double customerAmount) {
         this.customerAmount = customerAmount;
-    }
-
-    /**
-     * 获取
-     *
-     * @return money
-     */
-    public double getMoney() {
-        return money;
-    }
-
-    /**
-     * 设置
-     *
-     * @param money
-     */
-    public void setMoney(double money) {
-        this.money = money;
     }
 
     /**
@@ -172,31 +163,13 @@ public class MobileCard {
     /**
      * 设置
      *
-     * @param realFlow
+     * @param realFlow setRealFlow
      */
     public void setRealFlow(int realFlow) {
         this.realFlow = realFlow;
     }
 
-    /**
-     * 获取
-     *
-     * @return cardNumber
-     */
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    /**
-     * 设置
-     *
-     * @param cardNumber
-     */
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
     public String toString() {
-        return "MobileCard{userName = " + userName + ", passWord = " + passWord + ", serPackage = " + serPackage + ", customerAmount = " + customerAmount + ", money = " + money + ", realTalkTime = " + realTalkTime + ", realSMSCount = " + realSMSCount + ", realFlow = " + realFlow + ", cardNumber = " + cardNumber + "}";
+        return "MobileCard{userName = " + userName + ", passWord = " + passWord + ", cardNumber = " + cardNumber + ", serPackage = " + serPackage + ", customerAmount = " + customerAmount + ", realTalkTime = " + realTalkTime + ", realSMSCount = " + realSMSCount + ", realFlow = " + realFlow + "}";
     }
 }

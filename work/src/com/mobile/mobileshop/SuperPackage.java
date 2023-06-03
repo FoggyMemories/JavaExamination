@@ -19,8 +19,15 @@ public class SuperPackage extends ServicePackage implements CallService, SendSer
     }
 
 
+    /**
+     * @param minCount 用户通话时长余额
+     * @param card 用户卡号
+     * @return 本次通话时长
+     */
     @Override
     public int call(int minCount, MobileCard card) {
+        int temp = minCount;
+
         return 0;
     }
 
