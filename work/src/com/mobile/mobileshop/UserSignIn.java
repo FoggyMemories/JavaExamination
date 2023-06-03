@@ -25,7 +25,7 @@ public class UserSignIn {
 
         System.out.print("请输入密码:");
         String passWord = sc.nextLine();
-        if(matePassWord(passWord)){
+        if (matePassWord(passWord)) {
             System.out.println("您输入的密码正确");
         } else {
             System.out.println("您输入的密码有误");
@@ -43,7 +43,9 @@ public class UserSignIn {
     //判断密码是否合法
     public static boolean judgePassWord(String passWord) {
 
-        //万能密码
+        //密码判断暂时挂起
+
+        /*//万能密码
         String regexAll = "123";
 
         //密码长度8-16位、至少包含数字、一个小写字母、一个大写字母、一个特殊符号
@@ -53,14 +55,18 @@ public class UserSignIn {
             System.out.println("您输入的密码格式有误(密码长度8-16位、至少包含数字、一个小写字母、一个大写字母、一个特殊符号)");
             return false;
         }
+        */
 
         return true;
     }
 
     //判断密码是否正确
     public static boolean matePassWord(String passWord) {
-        judgePassWord(passWord);
+
+        /*judgePassWord(passWord);
         String passWordTemp = "123";
-        return judgePassWord(passWordTemp) || passWord.equals(passWordTemp);
+        boolean b = judgePassWord(passWordTemp) || passWord.equals(passWordTemp);*/
+
+        return true;
     }
 }
