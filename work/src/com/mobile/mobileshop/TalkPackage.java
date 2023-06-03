@@ -9,8 +9,8 @@ public class TalkPackage extends ServicePackage {
         super.setPrice(58);
     }
 
-    public TalkPackage(int talkTime, int flow, int smsCount, double price, double allPay, Object pack) {
-        super(talkTime, flow, smsCount, price, allPay, pack);
+    public TalkPackage(int talkTime, int flow, int smsCount, double price, Object pack) {
+        super(talkTime, flow, smsCount, price, pack);
     }
 
 }

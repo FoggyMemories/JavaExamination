@@ -6,21 +6,22 @@ import com.mobile.service.SendService;
 
 public class SuperPackage extends ServicePackage implements CallService, SendService, NetService {
 
+
     public SuperPackage() {
         super.setTalkTime(200);
         super.setFlow(10 * 1024);
         super.setSmsCount(50);
         super.setPrice(78);
-        super.setAllPay(0);
     }
 
-    public SuperPackage(int talkTime, int flow, int smsCount, double price, double allPay, Object pack) {
-        super(talkTime, flow, smsCount, price, allPay, pack);
+    public SuperPackage(int talkTime, int flow, int smsCount, double price, Object pack) {
+        super(talkTime, flow, smsCount, price, pack);
     }
+
 
     /**
      * @param minCount 用户通话时长余额
-     * @param card     用户卡号
+     * @param card 用户卡号
      * @return 本次通话时长
      */
     @Override
