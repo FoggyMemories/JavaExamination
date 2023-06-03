@@ -1,5 +1,6 @@
 package com.mobile.mobilemenu;
 
+
 import com.mobile.service.Users;
 
 import java.util.Scanner;
@@ -32,17 +33,17 @@ public class UesWEI {
                 switch (u.getWEIMenuNum()) {
                     case BILLING_QUERY -> new BillingQuery();
                     case MARGIN_QUERY -> new MarginQuery();
-                    case PRINT_LIST -> System.out.println("3.打印消费详单");
-                    case PLAN_CHANGES -> System.out.println("4.套餐变更");
-                    case CANCEL_NETWORK -> System.out.println("5.办理退网");
+                    case PRINT_LIST -> new PrintList();
+                    case PLAN_CHANGES -> new PlanChanges();
+                    case CANCEL_NETWORK -> new CancelNetwork();
                     default -> {
-                        exit();
+                        new Exit();
                         break loop;
                     }
                 }
                 break;
             } catch (NumberFormatException e) {
-                exit();
+                new Exit();
                 break;
             }
         }
@@ -60,8 +61,4 @@ public class UesWEI {
         System.out.println("5.办理退网");
     }
 
-    //推出此层,返回上一级
-    public static void exit() {
-        System.out.println("exit");
-    }
 }
