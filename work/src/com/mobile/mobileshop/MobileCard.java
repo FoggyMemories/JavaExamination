@@ -9,6 +9,7 @@ public class MobileCard {
     private int realTalkTime;
     private int realSMSCount;
     private int realFlow;
+    private int allPay;
 
 
     public MobileCard() {
@@ -23,8 +24,9 @@ public class MobileCard {
      * @param realTalkTime   实际通话时长
      * @param realSMSCount   实际短信条数
      * @param realFlow       实际使用流量
+     * @param allPay         需要的额外支出
      */
-    public MobileCard(String userName, String passWord, String cardNumber, ServicePackage serPackage, double customerAmount, int realTalkTime, int realSMSCount, int realFlow) {
+    public MobileCard(String userName, String passWord, String cardNumber, ServicePackage serPackage, double customerAmount, int realTalkTime, int realSMSCount, int realFlow, int allPay) {
         this.userName = userName;
         this.passWord = passWord;
         this.cardNumber = cardNumber;
@@ -33,6 +35,7 @@ public class MobileCard {
         this.realTalkTime = realTalkTime;
         this.realSMSCount = realSMSCount;
         this.realFlow = realFlow;
+        this.allPay = allPay;
     }
 
     /**
@@ -179,7 +182,25 @@ public class MobileCard {
         this.realFlow = realFlow;
     }
 
+    /**
+     * 获取
+     *
+     * @return allPay
+     */
+    public int getAllPay() {
+        return allPay;
+    }
+
+    /**
+     * 设置
+     *
+     * @param allPay
+     */
+    public void setAllPay(int allPay) {
+        this.allPay = allPay;
+    }
+
     public String toString() {
-        return "MobileCard{userName = " + userName + ", passWord = " + passWord + ", cardNumber = " + cardNumber + ", serPackage = " + serPackage + ", customerAmount = " + customerAmount + ", realTalkTime = " + realTalkTime + ", realSMSCount = " + realSMSCount + ", realFlow = " + realFlow + "}";
+        return "MobileCard{userName = " + userName + ", passWord = " + passWord + ", cardNumber = " + cardNumber + ", serPackage = " + serPackage + ", customerAmount = " + customerAmount + ", realTalkTime = " + realTalkTime + ", realSMSCount = " + realSMSCount + ", realFlow = " + realFlow + ", allPay = " + allPay + "}";
     }
 }

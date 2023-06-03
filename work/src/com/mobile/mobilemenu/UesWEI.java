@@ -33,7 +33,7 @@ public class UesWEI {
 
                 switch (u.getWEIMenuNum()) {
                     case BILLING_QUERY -> new BillingQuery(mc);
-                    case MARGIN_QUERY -> new MarginQuery();
+                    case MARGIN_QUERY -> new MarginQuery(mc);
                     case PRINT_LIST -> new PrintList();
                     case PLAN_CHANGES -> new PlanChanges();
                     case CANCEL_NETWORK -> new CancelNetwork();
