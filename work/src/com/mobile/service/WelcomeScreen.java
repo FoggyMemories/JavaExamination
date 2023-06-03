@@ -31,10 +31,10 @@ public class WelcomeScreen {
                 u.setWelcomeNum(num);
                 switch (u.getWelcomeNum()) {
                     case LOGIN -> new UsersLogin();
-                    case REGISTER -> System.out.println("用户注册");
+                    case REGISTER -> new UsersRegister();
                     case USEWEI -> System.out.println("使用WEI");
-                    case RECHARGE -> System.out.println("话费充值");
-                    case DESCRIPTION -> System.out.println("资费说明");
+                    case RECHARGE -> new TariffRecharge();
+                    case DESCRIPTION -> new TariffDescription();
                     case EXIT -> {
                         System.out.println("谢谢使用,再见.");
                         break loop;
