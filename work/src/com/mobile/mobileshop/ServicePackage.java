@@ -1,26 +1,29 @@
 package com.mobile.mobileshop;
 
 public abstract class ServicePackage {
+
     private int talkTime;
     private int flow;
     private int smsCount;
     private double price;
-    public Object pack;
-
+    private double allPay;
+    private Object pack;
 
     public ServicePackage() {
     }
 
-    public ServicePackage(int talkTime, int flow, int smsCount, double price, Object pack) {
+    public ServicePackage(int talkTime, int flow, int smsCount, double price, double allPay, Object pack) {
         this.talkTime = talkTime;
         this.flow = flow;
         this.smsCount = smsCount;
         this.price = price;
+        this.allPay = allPay;
         this.pack = pack;
     }
 
     /**
      * 获取
+     *
      * @return talkTime
      */
     public int getTalkTime() {
@@ -29,6 +32,7 @@ public abstract class ServicePackage {
 
     /**
      * 设置
+     *
      * @param talkTime
      */
     public void setTalkTime(int talkTime) {
@@ -37,6 +41,7 @@ public abstract class ServicePackage {
 
     /**
      * 获取
+     *
      * @return flow
      */
     public int getFlow() {
@@ -45,6 +50,7 @@ public abstract class ServicePackage {
 
     /**
      * 设置
+     *
      * @param flow
      */
     public void setFlow(int flow) {
@@ -53,6 +59,7 @@ public abstract class ServicePackage {
 
     /**
      * 获取
+     *
      * @return smsCount
      */
     public int getSmsCount() {
@@ -61,6 +68,7 @@ public abstract class ServicePackage {
 
     /**
      * 设置
+     *
      * @param smsCount
      */
     public void setSmsCount(int smsCount) {
@@ -69,6 +77,7 @@ public abstract class ServicePackage {
 
     /**
      * 获取
+     *
      * @return price
      */
     public double getPrice() {
@@ -77,6 +86,7 @@ public abstract class ServicePackage {
 
     /**
      * 设置
+     *
      * @param price
      */
     public void setPrice(double price) {
@@ -85,6 +95,25 @@ public abstract class ServicePackage {
 
     /**
      * 获取
+     *
+     * @return allPay
+     */
+    public double getAllPay() {
+        return allPay;
+    }
+
+    /**
+     * 设置
+     *
+     * @param allPay
+     */
+    public void setAllPay(double allPay) {
+        this.allPay = allPay;
+    }
+
+    /**
+     * 获取
+     *
      * @return pack
      */
     public Object getPack() {
@@ -93,6 +122,7 @@ public abstract class ServicePackage {
 
     /**
      * 设置
+     *
      * @param pack
      */
     public void setPack(Object pack) {
@@ -100,6 +130,6 @@ public abstract class ServicePackage {
     }
 
     public String toString() {
-        return "ServicePackage{talkTime = " + talkTime + ", flow = " + flow + ", smsCount = " + smsCount + ", price = " + price + ", pack = " + pack + "}";
+        return "ServicePackage{talkTime = " + talkTime + ", flow = " + flow + ", smsCount = " + smsCount + ", price = " + price + ", allPay = " + allPay + ", pack = " + pack + "}";
     }
 }

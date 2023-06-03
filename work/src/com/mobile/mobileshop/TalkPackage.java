@@ -1,6 +1,7 @@
 package com.mobile.mobileshop;
 
 public class TalkPackage extends ServicePackage {
+
     public TalkPackage() {
         super.setTalkTime(500);
         super.setFlow(0);
@@ -8,7 +9,8 @@ public class TalkPackage extends ServicePackage {
         super.setPrice(58);
     }
 
-    public TalkPackage(int talkTime, int flow, int smsCount, double price, Object pack) {
-        super(talkTime, flow, smsCount, price, pack);
+    public TalkPackage(int talkTime, int flow, int smsCount, double price, double allPay, Object pack) {
+        super(talkTime, flow, smsCount, price, allPay, pack);
     }
+
 }
