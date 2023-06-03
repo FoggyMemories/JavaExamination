@@ -18,7 +18,6 @@ public class UserSignIn {
                     break loop;
                 }
                 System.out.println("手机号合法");
-                new UesWEI();
                 break;
             } catch (NumberFormatException e) {
                 e.printStackTrace();
@@ -29,6 +28,7 @@ public class UserSignIn {
         String passWord = sc.nextLine();
         if (matePassWord(passWord)) {
             System.out.println("您输入的密码正确");
+            new UesWEI();
         } else {
             System.out.println("您输入的密码有误");
         }
