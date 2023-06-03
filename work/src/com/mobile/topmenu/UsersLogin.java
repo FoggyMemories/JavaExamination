@@ -23,7 +23,6 @@ public class UsersLogin {
         while (true) {
             CustomerInfo c = new CustomerInfo();
             System.out.print("请输入手机卡号:");
-            loop1:
             try {
                 String phoneNumber = sc.nextLine();
                 c.setCardNumber(phoneNumber);
@@ -36,7 +35,11 @@ public class UsersLogin {
                 CardUtil cardUtil = new CardUtil();
                 HashMap<String, MobileCard> cards = cardUtil.getHashMap();
 
+                //判断输入的手机号在库中是否存在
                 boolean b1 = cards.containsKey(phoneNumber);
+
+                //从keys中获取对应的value
+                MobileCard mc = cards.get(phoneNumber);
 
                 if (!b || !b1) {
                     System.out.println("手机号错误,请重新输入手机号");
@@ -56,15 +59,13 @@ public class UsersLogin {
                         System.out.print("请输入密码:");
                         String passWord = sc.nextLine();
 
-                        //从keys中获取对应的value
-                        MobileCard mc = cards.get(phoneNumber);
                         //再从对应的value中获取密码
                         String passWord1 = mc.getPassWord();
-                        System.out.println(passWord1);
                         if (matePassWord(passWord, passWord1)) {
                             System.out.println("您输入的密码正确");
                             System.out.println("------------------------------------------------------------------------");
-                            new UesWEI();
+                            new UesWEI(mc);
+                            break loop;
                         } else {
                             System.out.println("您输入的密码有误,请重新输入密码");
                             count++;
