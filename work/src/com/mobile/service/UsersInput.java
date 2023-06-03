@@ -4,14 +4,14 @@ import com.mobile.errors.NoneFoundNumberException;
 
 
 //用户JavaBean
-public class Users {
+public class UsersInput {
     private int WelcomeNum;
     private int WEIMenuNum;
 
-    public Users() {
+    public UsersInput() {
     }
 
-    public Users(int WelcomeNum, int WEIMenuNum) {
+    public UsersInput(int WelcomeNum, int WEIMenuNum) {
         this.WelcomeNum = WelcomeNum;
         this.WEIMenuNum = WEIMenuNum;
     }

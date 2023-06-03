@@ -1,7 +1,7 @@
 package com.mobile.mobilemenu;
 
 
-import com.mobile.service.Users;
+import com.mobile.service.UsersInput;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class UesWEI {
 
     public UesWEI() {
         Scanner sc = new Scanner(System.in);
-        Users u = new Users();
+        UsersInput u = new UsersInput();
 
         loop:
         while (true) {

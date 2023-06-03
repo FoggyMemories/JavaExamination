@@ -23,7 +23,7 @@ public class WelcomeScreen {
 
     public WelcomeScreen() {
         Scanner sc = new Scanner(System.in);
-        Users u = new Users();
+        UsersInput u = new UsersInput();
         loop:
         while (true) {
             print();
