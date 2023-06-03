@@ -1,8 +1,8 @@
-package com.mobile.ui;
+package com.mobile;
 
 import com.mobile.topmenu.WelcomeScreen;
 
-public class App {
+public class Main {
     public static void main(String[] args) {
         new WelcomeScreen();
     }
