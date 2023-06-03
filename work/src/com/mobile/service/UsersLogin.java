@@ -1,9 +1,9 @@
-package com.mobile.mobileshop;
+package com.mobile.service;
 
 import java.util.Scanner;
 
-public class UserSignIn {
-    public UserSignIn() {
+public class UsersLogin {
+    public UsersLogin() {
         Scanner sc = new Scanner(System.in);
 
 

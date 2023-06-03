@@ -1,7 +1,6 @@
 package com.mobile.service;
 
 import com.mobile.errors.NoneFoundNumberException;
-import com.mobile.mobileshop.UserSignIn;
 
 import java.util.Scanner;
 
@@ -31,7 +30,7 @@ public class WelcomeScreen {
                 int num = Integer.parseInt(strNum);
                 u.setWelcomeNum(num);
                 switch (u.getWelcomeNum()) {
-                    case LOGIN -> new UserSignIn();
+                    case LOGIN -> new UsersLogin();
                     case REGISTER -> System.out.println("用户注册");
                     case USEWEI -> System.out.println("使用WEI");
                     case RECHARGE -> System.out.println("话费充值");

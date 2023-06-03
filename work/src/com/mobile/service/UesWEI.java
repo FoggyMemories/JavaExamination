@@ -1,4 +1,4 @@
-package com.mobile.mobileshop;
+package com.mobile.service;
 
 import com.mobile.service.Users;
 
