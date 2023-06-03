@@ -2,6 +2,8 @@ package com.mobile.service;
 
 import com.mobile.errors.NoneFoundNumberException;
 
+
+//用户JavaBean
 public class Users {
     private int WelcomeNum;
     private int WEIMenuNum;

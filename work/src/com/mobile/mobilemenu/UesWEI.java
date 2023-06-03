@@ -1,4 +1,4 @@
-package com.mobile.service;
+package com.mobile.mobilemenu;
 
 import com.mobile.service.Users;
 
@@ -30,8 +30,8 @@ public class UesWEI {
                 u.setWEIMenuNum(num);
 
                 switch (u.getWEIMenuNum()) {
-                    case BILLING_QUERY -> System.out.println("1.本月账单查询");
-                    case MARGIN_QUERY -> System.out.println("2.套餐余量查询");
+                    case BILLING_QUERY -> new BillingQuery();
+                    case MARGIN_QUERY -> new MarginQuery();
                     case PRINT_LIST -> System.out.println("3.打印消费详单");
                     case PLAN_CHANGES -> System.out.println("4.套餐变更");
                     case CANCEL_NETWORK -> System.out.println("5.办理退网");

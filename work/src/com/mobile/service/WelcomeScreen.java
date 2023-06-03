@@ -4,6 +4,8 @@ import com.mobile.errors.NoneFoundNumberException;
 
 import java.util.Scanner;
 
+
+//欢迎界面
 public class WelcomeScreen {
 
     private static final int LOGIN = 1;
@@ -36,7 +38,7 @@ public class WelcomeScreen {
                     case RECHARGE -> new TariffRecharge();
                     case DESCRIPTION -> new TariffDescription();
                     case EXIT -> {
-                        System.out.println("谢谢使用,再见.");
+                        new Exit();
                         break loop;
                     }
                 }

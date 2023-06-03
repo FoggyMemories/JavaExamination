@@ -1,7 +1,11 @@
 package com.mobile.service;
 
+import com.mobile.mobilemenu.UesWEI;
+
 import java.util.Scanner;
 
+
+//用户登录
 public class UsersLogin {
     public UsersLogin() {
         Scanner sc = new Scanner(System.in);
@@ -24,6 +28,8 @@ public class UsersLogin {
             }
         }
 
+
+        //密码部分暂时挂起
         System.out.print("请输入密码:");
         String passWord = sc.nextLine();
         if (matePassWord(passWord)) {
