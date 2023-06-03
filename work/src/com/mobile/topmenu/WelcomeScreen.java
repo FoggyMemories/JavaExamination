@@ -21,6 +21,13 @@ public class WelcomeScreen {
         System.out.println("1.用户登录\t2.用户注册\t3.使用WEI\t4.话费充值\t5.资费说明\t6.退出系统");
     }
 
+    public static void print() {
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("1.用户登录\t2.用户注册\t3.使用WEI\t4.话费充值\t5.资费说明\t6.退出系统");
+        //提示用户输入
+        System.out.print("请选择:");
+    }
+
     public WelcomeScreen() {
         Scanner sc = new Scanner(System.in);
         UsersInput u = new UsersInput();
@@ -50,12 +57,5 @@ public class WelcomeScreen {
 
         //释放资源
         sc.close();
-    }
-
-    public static void print() {
-        System.out.println("------------------------------------------------------------------------");
-        System.out.println("1.用户登录\t2.用户注册\t3.使用WEI\t4.话费充值\t5.资费说明\t6.退出系统");
-        //提示用户输入
-        System.out.print("请选择:");
     }
 }

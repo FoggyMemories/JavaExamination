@@ -2,8 +2,14 @@ package com.mobile.topmenu;
 
 import com.mobile.data.CustomerInfo;
 import com.mobile.mobilemenu.UesWEI;
+import com.mobile.mobileshop.MobileCard;
+import com.mobile.util.CardUtil;
 
+import java.security.Key;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import static com.mobile.util.judgeUtil.judgePhoneNumber;
 
@@ -22,9 +28,21 @@ public class UsersLogin {
                 String phoneNumber = sc.nextLine();
                 c.setCardNumber(phoneNumber);
                 Long.parseLong(c.getCardNumber());
-                if (!judgePhoneNumber(c.getCardNumber())) {
-                    System.out.println("手机号不合法,请重新输入手机号");
-                    break loop;
+
+                //对比正则,查看输入的手机号是否合法
+                boolean b = !judgePhoneNumber(c.getCardNumber());
+
+                //引入总库,对比手机号是否存在
+                CardUtil cardUtil = new CardUtil();
+                HashMap<String, MobileCard> cards = cardUtil.getHashMap();
+                Set<String> set = cards.keySet();
+
+                for (String s : set) {
+                    boolean b1 = c.getCardNumber().equals(s);
+                    if (b || b1) {
+                        System.out.println("手机号不存在,请重新输入手机号");
+                        break loop;
+                    }
                 }
                 System.out.println("手机号合法");
                 break;

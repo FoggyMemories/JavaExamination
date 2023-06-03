@@ -8,7 +8,7 @@ import com.mobile.mobileshop.TalkPackage;
 import java.util.HashMap;
 
 public class CardUtil {
-    static {
+    public HashMap<String, MobileCard> getHashMap() {
         HashMap<String, MobileCard> cards = new HashMap<>();
 
         MobileCard card1 = new MobileCard("熊大", "123", "13998765412", new TalkPackage(), 0, 0, 0, 0);
@@ -19,9 +19,13 @@ public class CardUtil {
         card4.setRealTalkTime(500);
         card4.setRealSMSCount(100);
 
+
+
         cards.put("13956482685", card1);
         cards.put("13956486685", card2);
         cards.put("13956472685", card3);
         cards.put("13956482585", card4);
+
+        return cards;
     }
 }
