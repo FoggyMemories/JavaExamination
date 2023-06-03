@@ -40,12 +40,11 @@ public class UsersLogin {
                 for (String s : keys) {
                     boolean b1 = c.getCardNumber().equals(s);
                     if (b || b1) {
-                        System.out.println("手机号不存在,请重新输入手机号");
+                        System.out.println("手机号错误,请重新输入手机号");
                         break loop;
                     }
                 }
                 System.out.println("手机号合法");
-                //密码部分暂时挂起
                 System.out.print("请输入密码:");
                 String passWord = sc.nextLine();
 
@@ -56,6 +55,7 @@ public class UsersLogin {
                         new UesWEI();
                     } else {
                         System.out.println("您输入的密码有误");
+                        break;
                     }
                 }
 
@@ -68,29 +68,8 @@ public class UsersLogin {
 
     }
 
-
-    public static boolean judgePassWord(String passWord) {
-
-        //万能密码
-        String regexAll = "123";
-
-        //密码长度8-16位、至少包含数字、一个小写字母、一个大写字母、一个特殊符号
-        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,16}$";
-
-        if (!passWord.matches(regex) && !passWord.matches(regexAll)) {
-            System.out.println("您输入的密码格式有误(密码长度8-16位、至少包含数字、一个小写字母、一个大写字母、一个特殊符号)");
-            return false;
-        }
-
-        return true;
-    }
-
     //判断密码是否正确
     public static boolean matePassWord(String passWord, String passWord1) {
-
-        boolean b = judgePassWord(passWord);
-        boolean b1 = passWord.equals(passWord1);
-
-        return b & b1;
+        return passWord.equals(passWord1);
     }
 }
