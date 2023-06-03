@@ -14,6 +14,16 @@ public class MobileCard {
     public MobileCard() {
     }
 
+    /**
+     * @param userName       用户名
+     * @param passWord       密码
+     * @param cardNumber     卡号
+     * @param serPackage     套餐类型
+     * @param customerAmount 账户余额
+     * @param realTalkTime   实际通话时长
+     * @param realSMSCount   实际短信条数
+     * @param realFlow       实际使用流量
+     */
     public MobileCard(String userName, String passWord, String cardNumber, ServicePackage serPackage, double customerAmount, int realTalkTime, int realSMSCount, int realFlow) {
         this.userName = userName;
         this.passWord = passWord;
