@@ -14,10 +14,11 @@ public class UserSignIn {
                 String phoneNumber = sc.nextLine();
                 Long.parseLong(phoneNumber);
                 if (!judgePhoneNumber(phoneNumber)) {
-                    System.out.println("手机号不合法");
+                    System.out.println("手机号不合法,请重新输入手机号");
                     break loop;
                 }
                 System.out.println("手机号合法");
+                new UesWEI();
                 break;
             } catch (NumberFormatException e) {
                 e.printStackTrace();

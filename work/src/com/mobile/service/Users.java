@@ -3,35 +3,61 @@ package com.mobile.service;
 import com.mobile.errors.NoneFoundNumberException;
 
 public class Users {
-    private int num;
+    private int WelcomeNum;
+    private int WEIMenuNum;
 
     public Users() {
     }
 
-    public Users(int num) {
-        this.num = num;
+    public Users(int WelcomeNum, int WEIMenuNum) {
+        this.WelcomeNum = WelcomeNum;
+        this.WEIMenuNum = WEIMenuNum;
     }
 
     /**
      * 获取
+     *
      * @return num
      */
-    public int getNum() {
-        return num;
+    public int getWelcomeNum() {
+        return WelcomeNum;
     }
 
     /**
      * 设置
-     * @param num
+     *
+     * @param welcomeNum
      */
-    public void setNum(int num) {
-        if(num < 1 || num > 6){
+    public void setWelcomeNum(int welcomeNum) {
+        if (welcomeNum < 1 || welcomeNum > 6) {
             throw new NoneFoundNumberException("请输入 1 ~ 6 之间的整数");
         }
-        this.num = num;
+        this.WelcomeNum = welcomeNum;
     }
 
+    /**
+     * 获取
+     *
+     * @return WEIMenuNum
+     */
+    public int getWEIMenuNum() {
+        return WEIMenuNum;
+    }
+
+    /**
+     * 设置
+     *
+     * @param WEIMenuNum
+     */
+    public void setWEIMenuNum(int WEIMenuNum) {
+        this.WEIMenuNum = WEIMenuNum;
+    }
+
+    @Override
     public String toString() {
-        return "UsersInput{num = " + num + "}";
+        return "Users{" +
+                "WelcomeNum=" + WelcomeNum +
+                ", WEIMenuNum=" + WEIMenuNum +
+                '}';
     }
 }
