@@ -1,17 +1,16 @@
 package com.mobile.mobilemenu;
 
 
-import com.mobile.mobileshop.MobileCard;
-
+import com.mobile.data.CustomerInfo;
 
 //本月账单查询
 public class BillingQuery {
-    public BillingQuery(MobileCard mc) {
+    public BillingQuery(CustomerInfo ci) {
 
-        System.out.println("您的卡号是:" + mc.getCardNumber());
+        System.out.println("您的卡号是:" + ci.getCardNumber());
         System.out.println("---当月账单---");
-        System.out.println("套餐资费:" + mc.getSerPackage().getPrice());
-        System.out.println("合计:" + (mc.getSerPackage().getPrice() + mc.getAllPay()));
-        System.out.println("账户余额:" + mc.getCustomerAmount());
+        System.out.println("套餐资费:" + ci.getSerPackage().getPrice());
+        System.out.println("合计:" + (ci.getSerPackage().getPrice() + ci.getAllPay()));
+        System.out.println("账户余额:" + ci.getCustomerAmount());
     }
 }

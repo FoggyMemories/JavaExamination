@@ -25,19 +25,19 @@ public class SuperPackage extends ServicePackage implements CallService, SendSer
      * @return 本次通话时长
      */
     @Override
-    public int call(int minCount, MobileCard card) {
+    public int call(int minCount, customerInfo card) {
         int temp = minCount;
 
         return 0;
     }
 
     @Override
-    public int netPlay(int flow, MobileCard card) {
+    public int netPlay(int flow, customerInfo card) {
         return 0;
     }
 
     @Override
-    public int sendMessage(int count, MobileCard card) {
+    public int sendMessage(int count, customerInfo card) {
         return 0;
     }
 }

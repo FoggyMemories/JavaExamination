@@ -1,11 +1,11 @@
 package com.mobile.mobilemenu;
 
 
-import com.mobile.mobileshop.MobileCard;
+import com.mobile.data.CustomerInfo;
 
 //套餐余量查询
 public class MarginQuery {
-    public MarginQuery(MobileCard mc) {
+    public MarginQuery(CustomerInfo ci) {
         System.out.println("您的卡号是:" + mc.getCardNumber());
         System.out.println("---套餐内剩余---");
         System.out.println("通话时长:" + mc.getRealTalkTime());

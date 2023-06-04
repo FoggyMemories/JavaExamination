@@ -1,8 +1,8 @@
 package com.mobile.mobilemenu;
 
 
-import com.mobile.mobileshop.MobileCard;
-import com.mobile.topmenu.UsersInput;
+import com.mobile.data.CustomerInfo;
+import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
 
@@ -17,9 +17,9 @@ public class UesWEI {
         System.out.println("*****WEI移动用户菜单*****");
     }
 
-    public UesWEI(MobileCard mc) {
+    public UesWEI(CustomerInfo ci) {
         Scanner sc = new Scanner(System.in);
-        UsersInput u = new UsersInput();
+        UsersInputUtil u = new UsersInputUtil();
 
         loop:
         while (true) {
@@ -32,8 +32,8 @@ public class UesWEI {
                 u.setWEIMenuNum(num);
 
                 switch (u.getWEIMenuNum()) {
-                    case BILLING_QUERY -> new BillingQuery(mc);
-                    case MARGIN_QUERY -> new MarginQuery(mc);
+                    case BILLING_QUERY -> new BillingQuery(ci);
+                    case MARGIN_QUERY -> new MarginQuery(ci);
                     case PRINT_LIST -> new PrintList();
                     case PLAN_CHANGES -> new PlanChanges();
                     case CANCEL_NETWORK -> new CancelNetwork();

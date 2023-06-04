@@ -1,6 +1,7 @@
 package com.mobile.topmenu;
 
 import com.mobile.errors.NoneFoundNumberException;
+import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
 
@@ -30,7 +31,7 @@ public class WelcomeScreen {
 
     public WelcomeScreen() {
         Scanner sc = new Scanner(System.in);
-        UsersInput u = new UsersInput();
+        UsersInputUtil u = new UsersInputUtil();
         loop:
         while (true) {
             print();

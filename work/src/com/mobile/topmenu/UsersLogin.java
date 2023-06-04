@@ -2,13 +2,10 @@ package com.mobile.topmenu;
 
 import com.mobile.data.CustomerInfo;
 import com.mobile.mobilemenu.UesWEI;
-import com.mobile.mobileshop.MobileCard;
 import com.mobile.util.CardUtil;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Set;
 
 import static com.mobile.util.judgeUtil.judgePhoneNumber;
 
@@ -33,13 +30,13 @@ public class UsersLogin {
 
                 //引入总库,对比手机号是否存在
                 CardUtil cardUtil = new CardUtil();
-                HashMap<String, MobileCard> cards = cardUtil.getHashMap();
+                HashMap<String, CustomerInfo> cards = cardUtil.getHashMap();
 
                 //判断输入的手机号在库中是否存在
                 boolean b1 = cards.containsKey(phoneNumber);
 
                 //从keys中获取对应的value
-                MobileCard mc = cards.get(phoneNumber);
+                CustomerInfo ci = cards.get(phoneNumber);
 
                 if (!b || !b1) {
                     System.out.println("手机号错误,请重新输入手机号");
@@ -60,11 +57,11 @@ public class UsersLogin {
                         String passWord = sc.nextLine();
 
                         //再从对应的value中获取密码
-                        String passWord1 = mc.getPassWord();
+                        String passWord1 = ci.getPassWord();
                         if (matePassWord(passWord, passWord1)) {
                             System.out.println("您输入的密码正确");
                             System.out.println("------------------------------------------------------------------------");
-                            new UesWEI(mc);
+                            new UesWEI(ci);
                             break loop;
                         } else {
                             System.out.println("您输入的密码有误,请重新输入密码");
