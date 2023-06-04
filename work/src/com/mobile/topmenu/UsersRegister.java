@@ -159,7 +159,8 @@ public class UsersRegister {
 
         //提示注册成功
         System.out.println("***********************注册成功***********************");
-        System.out.println("卡号:" + ci.getCardNumber() + " 用户名:" + ci.getUserName() + " 当前余额:" + (ci.getCustomerAmount() + count));
+        System.out.println("卡号:" + ci.getCardNumber() + " 用户名:" +
+                ci.getUserName() + " 当前余额:" + (ci.getCustomerAmount() + count - ci.getSerPackage().getPrice()));
         System.out.println(ci.getSerPackage().toString());
 
 
