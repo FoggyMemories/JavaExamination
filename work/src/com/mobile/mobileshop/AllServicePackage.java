@@ -6,22 +6,27 @@ public abstract class AllServicePackage {
     private int flow;
     private int smsCount;
     private double price;
-    private Object pack;
 
 
     public AllServicePackage() {
     }
 
-    public AllServicePackage(int talkTime, int flow, int smsCount, double price, Object pack) {
+    /**
+     * @param talkTime 用户通话时长
+     * @param flow     用户使用流量
+     * @param smsCount 用户短信发送条数
+     * @param price    套餐价位
+     */
+    public AllServicePackage(int talkTime, int flow, int smsCount, double price) {
         this.talkTime = talkTime;
         this.flow = flow;
         this.smsCount = smsCount;
         this.price = price;
-        this.pack = pack;
     }
 
     /**
      * 获取
+     *
      * @return talkTime
      */
     public int getTalkTime() {
@@ -30,6 +35,7 @@ public abstract class AllServicePackage {
 
     /**
      * 设置
+     *
      * @param talkTime
      */
     public void setTalkTime(int talkTime) {
@@ -38,6 +44,7 @@ public abstract class AllServicePackage {
 
     /**
      * 获取
+     *
      * @return flow
      */
     public int getFlow() {
@@ -46,6 +53,7 @@ public abstract class AllServicePackage {
 
     /**
      * 设置
+     *
      * @param flow
      */
     public void setFlow(int flow) {
@@ -54,6 +62,7 @@ public abstract class AllServicePackage {
 
     /**
      * 获取
+     *
      * @return smsCount
      */
     public int getSmsCount() {
@@ -62,6 +71,7 @@ public abstract class AllServicePackage {
 
     /**
      * 设置
+     *
      * @param smsCount
      */
     public void setSmsCount(int smsCount) {
@@ -70,6 +80,7 @@ public abstract class AllServicePackage {
 
     /**
      * 获取
+     *
      * @return price
      */
     public double getPrice() {
@@ -78,29 +89,15 @@ public abstract class AllServicePackage {
 
     /**
      * 设置
+     *
      * @param price
      */
     public void setPrice(double price) {
         this.price = price;
     }
 
-    /**
-     * 获取
-     * @return pack
-     */
-    public Object getPack() {
-        return pack;
-    }
-
-    /**
-     * 设置
-     * @param pack
-     */
-    public void setPack(Object pack) {
-        this.pack = pack;
-    }
 
     public String toString() {
-        return "ServicePackage{talkTime = " + talkTime + ", flow = " + flow + ", smsCount = " + smsCount + ", price = " + price + ", pack = " + pack + "}";
+        return "ServicePackage{talkTime = " + talkTime + ", flow = " + flow + ", smsCount = " + smsCount + ", price = " + price + "}";
     }
 }

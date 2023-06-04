@@ -9,8 +9,7 @@ public class NetPackage extends AllServicePackage {
         super.setPrice(68);
     }
 
-    public NetPackage(int talkTime, int flow, int smsCount, double price, Object pack) {
-        super(talkTime, flow, smsCount, price, pack);
+    public NetPackage(int talkTime, int flow, int smsCount, double price) {
+        super(talkTime, flow, smsCount, price);
     }
-
 }
