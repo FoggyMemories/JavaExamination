@@ -3,6 +3,7 @@ package com.mobile.data;
 import com.mobile.mobileshop.AllServicePackage;
 
 public class CustomerInfo {
+
     private String cardNumber;
     private String type;
     private String userName;
@@ -27,7 +28,6 @@ public class CustomerInfo {
     }
 
     /**
-     *
      * @param cardNumber     卡号
      * @param type           套餐类型(字符串)
      * @param userName       用户名

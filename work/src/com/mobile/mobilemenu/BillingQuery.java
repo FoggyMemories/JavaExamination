@@ -12,5 +12,6 @@ public class BillingQuery {
         System.out.println("套餐资费:" + ci.getSerPackage().getPrice());
         System.out.println("合计:" + (ci.getSerPackage().getPrice() + ci.getAllPay()));
         System.out.println("账户余额:" + ci.getCustomerAmount());
+
     }
 }
