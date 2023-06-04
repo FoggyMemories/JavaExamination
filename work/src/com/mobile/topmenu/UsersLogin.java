@@ -21,8 +21,8 @@ public class UsersLogin {
             CustomerInfo c = new CustomerInfo();
             System.out.print("请输入卡号:");
             try {
-                String phoneNumber = sc.nextLine();
-                c.setCardNumber(phoneNumber);
+                String cardNumber = sc.nextLine();
+                c.setCardNumber(cardNumber);
                 Long.parseLong(c.getCardNumber());
 
                 //对比正则,查看输入的手机号是否合法
@@ -33,13 +33,20 @@ public class UsersLogin {
                 HashMap<String, CustomerInfo> cards = cardUtil.getHashMap();
 
                 //判断输入的手机号在库中是否存在
-                boolean b1 = cards.containsKey(phoneNumber);
+                boolean b1 = cards.containsKey(cardNumber);
+
 
                 //从keys中获取对应的value
-                CustomerInfo ci = cards.get(phoneNumber);
+                CustomerInfo ci = cards.get(cardNumber);
 
                 if (!b || !b1) {
-                    System.out.println("*手机号错误,请重新输入手机号*");
+                    System.out.println("*该卡号信息不存在(输入任意字符继续,如需退出登陆,请输入:exit)*");
+                    System.out.print(":");
+                    String str = sc.nextLine();
+                    if (str.equalsIgnoreCase("exit")) {
+                        new WelcomeScreen();
+                        break;
+                    }
                 } else {
                     System.out.print("手机号正确,");
 
@@ -50,6 +57,7 @@ public class UsersLogin {
                         //对输入的次数进行限定
                         if (count >= 3) {
                             System.out.println("***输入密码错误次数超过三次,账户被锁定.***");
+                            new Exit();
                             break loop;
                         }
                         //提示用户输入密码
