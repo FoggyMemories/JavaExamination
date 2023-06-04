@@ -7,7 +7,7 @@ import com.mobile.util.CardUtil;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import static com.mobile.util.judgeUtil.judgePhoneNumber;
+import static com.mobile.util.JudgeUtil.judgePhoneNumber;
 
 
 //用户登录
@@ -25,14 +25,14 @@ public class UsersLogin {
                 c.setCardNumber(cardNumber);
                 Long.parseLong(c.getCardNumber());
 
-                //对比正则,查看输入的手机号是否合法
+                //对比正则,查看输入的卡号是否合法
                 boolean b = judgePhoneNumber(c.getCardNumber());
 
-                //引入总库,对比手机号是否存在
+                //引入总库,对比卡号是否存在
                 CardUtil cardUtil = new CardUtil();
                 HashMap<String, CustomerInfo> cards = cardUtil.getHashMap();
 
-                //判断输入的手机号在库中是否存在
+                //判断输入的卡号在库中是否存在
                 boolean b1 = cards.containsKey(cardNumber);
 
 
@@ -48,7 +48,7 @@ public class UsersLogin {
                         break;
                     }
                 } else {
-                    System.out.print("手机号正确,");
+                    System.out.print("卡号正确,");
 
                     //重置计数器
                     int count = 0;

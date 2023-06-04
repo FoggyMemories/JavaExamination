@@ -8,7 +8,7 @@ import com.mobile.mobileshop.NetPackage;
 import com.mobile.mobileshop.SuperPackage;
 import com.mobile.mobileshop.TalkPackage;
 import com.mobile.util.UsersInputUtil;
-import com.mobile.util.judgeUtil;
+import com.mobile.util.JudgeUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -126,7 +126,7 @@ public class UsersRegister {
             String passWord = sc.nextLine();
 
             //对密码规则进行判断
-            if (judgeUtil.judgePassWord(passWord)) {
+            if (JudgeUtil.judgePassWord(passWord)) {
                 //应当进行密码重新输入对比
                 System.out.print("请重新输入密码:");
                 String rePassWord = sc.nextLine();

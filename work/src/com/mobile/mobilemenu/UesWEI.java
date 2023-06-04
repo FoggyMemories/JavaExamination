@@ -15,7 +15,7 @@ public class UesWEI {
     private static final int CANCEL_NETWORK = 5;
 
     static {
-        System.out.println("**********************WEI移动用户菜单**********************");
+        System.out.println("*************************WEI移动用户菜单*************************");
     }
 
     public UesWEI(CustomerInfo ci) {
@@ -36,9 +36,9 @@ public class UesWEI {
                 switch (u.getWEIMenuNum()) {
                     case BILLING_QUERY -> new BillingQuery(ci);
                     case MARGIN_QUERY -> new MarginQuery(ci);
-                    case PRINT_LIST -> new PrintList();
-                    case PLAN_CHANGES -> new PlanChanges();
-                    case CANCEL_NETWORK -> new CancelNetwork();
+                    case PRINT_LIST -> new PrintList(ci);
+                    case PLAN_CHANGES -> new PlanChanges(ci);
+                    case CANCEL_NETWORK -> new CancelNetwork(ci);
                     default -> {
                         new WelcomeScreen();
                         break loop;

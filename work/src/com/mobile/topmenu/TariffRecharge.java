@@ -3,7 +3,7 @@ package com.mobile.topmenu;
 
 import java.util.Scanner;
 
-import static com.mobile.util.judgeUtil.judgePhoneNumber;
+import static com.mobile.util.JudgeUtil.judgePhoneNumber;
 
 //话费充值
 public class TariffRecharge {
