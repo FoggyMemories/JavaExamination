@@ -39,7 +39,7 @@ public class UsersLogin {
                 CustomerInfo ci = cards.get(phoneNumber);
 
                 if (!b || !b1) {
-                    System.out.println("手机号错误,请重新输入手机号");
+                    System.out.println("*手机号错误,请重新输入手机号*");
                 } else {
                     System.out.print("手机号正确,");
 
@@ -49,7 +49,7 @@ public class UsersLogin {
                     while (true) {
                         //对输入的次数进行限定
                         if (count >= 3) {
-                            System.out.println("输入密码错误次数超过三次,账户被锁定.");
+                            System.out.println("***输入密码错误次数超过三次,账户被锁定.***");
                             break loop;
                         }
                         //提示用户输入密码
@@ -60,17 +60,16 @@ public class UsersLogin {
                         String passWord1 = ci.getPassWord();
                         if (matePassWord(passWord, passWord1)) {
                             System.out.println("您输入的密码正确");
-                            System.out.println("------------------------------------------------------------------------");
                             new UesWEI(ci);
                             break loop;
                         } else {
-                            System.out.println("您输入的密码有误,请重新输入密码");
+                            System.out.println("*您输入的密码有误,请重新输入密码*");
                             count++;
                         }
                     }
                 }
             } catch (NumberFormatException e) {
-                System.out.println("输入的为非数字,请重新输入");
+                System.out.println("*输入的为非数字,请重新输入*");
             }
         }
 

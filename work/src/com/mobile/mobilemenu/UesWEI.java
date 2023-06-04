@@ -18,6 +18,7 @@ public class UesWEI {
     }
 
     public UesWEI(CustomerInfo ci) {
+        System.out.println("------------------------------------------------------------------------");
         Scanner sc = new Scanner(System.in);
         UsersInputUtil u = new UsersInputUtil();
 
