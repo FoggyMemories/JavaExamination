@@ -1,5 +1,6 @@
 package com.mobile.data;
 
+import com.mobile.errors.NameOutOfBoundsException;
 import com.mobile.mobileshop.AllServicePackage;
 
 public class CustomerInfo {
@@ -127,6 +128,9 @@ public class CustomerInfo {
      * @param userName
      */
     public void setUserName(String userName) {
+        if (userName.length() < 2 || userName.length() > 10) {
+            throw new NameOutOfBoundsException();
+        }
         this.userName = userName;
     }
 

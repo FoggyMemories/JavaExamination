@@ -3,7 +3,12 @@ package com.mobile.topmenu;
 
 import com.mobile.data.CustomerInfo;
 import com.mobile.errors.NoneFoundNumberException;
+import com.mobile.mobileshop.AllServicePackage;
+import com.mobile.mobileshop.NetPackage;
+import com.mobile.mobileshop.SuperPackage;
+import com.mobile.mobileshop.TalkPackage;
 import com.mobile.util.UsersInputUtil;
+import com.mobile.util.judgeUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,8 +41,14 @@ public class UsersRegister {
             }
         }
 
+        System.out.println("*****************************************************");
+
         //创建新的用户Util输入判断
         UsersInputUtil uiu = new UsersInputUtil();
+
+        //创建新的用户对象接收新建用户
+        CustomerInfo ci = new CustomerInfo();
+
         //进行用户输入
         Scanner sc = new Scanner(System.in);
 
@@ -49,11 +60,13 @@ public class UsersRegister {
             try {
                 int num = Integer.parseInt(strNum);
                 uiu.setChooseCardNum(num);
+                //将用户选择的号码存储在新建用户之中
+                ci.setCardNumber(cardNumList.get(num - 1));
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("输入的格式不合法,请重新输入.");
+                System.out.println("*输入的格式不合法,请重新输入.*");
             } catch (NoneFoundNumberException e) {
-                System.out.println("请输入 1 ~ 9 之间的整数");
+                System.out.println("*请输入 1 ~ 9 之间的整数.*");
             }
         }
 
@@ -68,27 +81,105 @@ public class UsersRegister {
             }
         }
 
+        System.out.println("*****************************************************");
+
         //进行用户输入
         //提示用户选择套餐类型
-        System.out.println("请选择套餐序号:");
-        String strNum = sc.nextLine();
+        while (true) {
+            System.out.print("请选择套餐序号:");
+            String strNum = sc.nextLine();
 
-        try {
-            int num = Integer.parseInt(strNum);
-            uiu.setChooseTypeNum(num);
-        } catch (NumberFormatException e) {
-            System.out.println("输入的格式不合法,请重新输入.");
-        } catch (NoneFoundNumberException e) {
-            System.out.println("请输入 1 ~ 3 之间的整数");
+            try {
+                int num = Integer.parseInt(strNum);
+                uiu.setChooseTypeNum(num);
+
+                //将纯数字转化为对应的套餐
+                ci.setSerPackage(turn(uiu.getChooseTypeNum()));
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("*输入的格式不合法,请重新输入套餐序号.*");
+            } catch (NoneFoundNumberException e) {
+                System.out.println("*请输入 1 ~ 3 之间的整数.*");
+            }
         }
 
 
-        //创建新的用户对象接收新建用户
-        CustomerInfo c = new CustomerInfo();
+        //名字长度应当在2 ~ 5之间
+        while (true) {
+            //提示用户输入姓名
+            System.out.print("请输入姓名:");
+            String name = sc.nextLine();
+            //名字长度越界捕获
+            try {
+                ci.setUserName(name);
+                break;
+            } catch (Exception e) {
+                System.out.println("*您输入的用户名长度应当在2 ~ 10之间,请重新输入用户名.*");
+            }
+        }
 
-        //提示用户输入姓名
-        String name = sc.nextLine();
+        //提示用户输入密码
+        while (true) {
+            System.out.print("请输入密码:");
+            String passWord = sc.nextLine();
+
+            //对密码规则进行判断
+            if (judgeUtil.judgePassWord(passWord)) {
+                //应当进行密码重新输入对比
+                System.out.print("请重新输入密码:");
+                String rePassWord = sc.nextLine();
+                if (passWord.equals(rePassWord)) {
+                    ci.setPassWord(passWord);
+                    break;
+                } else {
+                    System.out.println("*输入的两次密码不同,请重新输入密码.*");
+                }
+            } else {
+                System.out.println("*密码长度8-16位、至少包含数字、一个小写字母、一个大写字母.*");
+            }
+        }
+
+        int count;
+        //提示用户预存话费
+        while (true) {
+            System.out.print("请输入预存话费金额:");
+            loop:
+            try {
+                String strNum1 = sc.nextLine();
+                count = Integer.parseInt(strNum1);
+                if (count < 50) {
+                    System.out.println("*预存的最小金额为 50 .*");
+                    break loop;
+                }
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("*输入的格式不合法,请重新输入.*");
+            }
+        }
+
+        //提示注册成功
+        System.out.println("***********************注册成功***********************");
+        System.out.println("卡号:" + ci.getCardNumber() + " 用户名:" + ci.getUserName() + " 当前余额:" + (ci.getCustomerAmount() + count));
+        ci.getSerPackage().toString();
 
 
+        //释放资源
+        sc.close();
+    }
+
+    //将套餐数字转化为具体的套餐种类
+    public static AllServicePackage turn(int num) {
+        switch (num) {
+            case 1 -> {
+                return new TalkPackage();
+            }
+            case 2 -> {
+                return new NetPackage();
+            }
+            case 3 -> {
+                return new SuperPackage();
+            }
+            default -> throw new NoneFoundNumberException();
+        }
     }
 }

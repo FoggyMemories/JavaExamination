@@ -10,8 +10,8 @@ public class judgeUtil {
 
     //使用正则表达式判断输入的密码是否合法
     public static boolean judgePassWord(String passWord) {
-        //密码长度8-16位、至少包含数字、一个小写字母、一个大写字母、一个特殊符号
-        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,16}$";
+        //密码长度8-16位、至少包含数字、一个小写字母、一个大写字母
+        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,16}$";
         return passWord.matches(regex);
     }
 }
