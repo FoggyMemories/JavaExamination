@@ -147,12 +147,15 @@ public class UsersRegister {
             try {
                 String strNum1 = sc.nextLine();
                 count = Integer.parseInt(strNum1);
+                if (count < 0) {
+                    throw new NoneFoundNumberException();
+                }
                 if (count < 50) {
                     System.out.println("*预存的最小金额为 50 .*");
                     break loop;
                 }
                 break;
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | NoneFoundNumberException e) {
                 System.out.println("*输入的格式不合法,请重新输入.*");
             }
         }

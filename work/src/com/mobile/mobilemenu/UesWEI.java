@@ -2,6 +2,7 @@ package com.mobile.mobilemenu;
 
 
 import com.mobile.data.CustomerInfo;
+import com.mobile.topmenu.WelcomeScreen;
 import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
@@ -39,13 +40,13 @@ public class UesWEI {
                     case PLAN_CHANGES -> new PlanChanges();
                     case CANCEL_NETWORK -> new CancelNetwork();
                     default -> {
-                        new Exit();
+                        new WelcomeScreen();
                         break loop;
                     }
                 }
                 break;
             } catch (NumberFormatException e) {
-                new Exit();
+                new WelcomeScreen();
                 break;
             }
         }
