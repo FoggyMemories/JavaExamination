@@ -7,7 +7,7 @@ import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
 
-public class UesWEI {
+public class WEIMenu {
     private static final int BILLING_QUERY = 1;
     private static final int MARGIN_QUERY = 2;
     private static final int PRINT_LIST = 3;
@@ -18,7 +18,7 @@ public class UesWEI {
         System.out.println("*************************WEI移动用户菜单*************************");
     }
 
-    public UesWEI(CustomerInfo ci) {
+    public WEIMenu(CustomerInfo ci) {
         System.out.println("------------------------------------------------------------------------");
         Scanner sc = new Scanner(System.in);
         UsersInputUtil u = new UsersInputUtil();

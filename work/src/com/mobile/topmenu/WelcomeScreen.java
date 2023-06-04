@@ -42,7 +42,7 @@ public class WelcomeScreen {
                 switch (u.getWelcomeNum()) {
                     case LOGIN -> new UsersLogin();
                     case REGISTER -> new UsersRegister();
-                    case USE_WEI -> System.out.println("使用WEI");
+                    case USE_WEI -> new UseWEI();
                     case RECHARGE -> new TariffRecharge();
                     case DESCRIPTION -> new TariffDescription();
                     case EXIT -> {

@@ -1,7 +1,7 @@
 package com.mobile.util;
 
 import com.mobile.data.CustomerInfo;
-import com.mobile.mobilemenu.UesWEI;
+import com.mobile.mobilemenu.WEIMenu;
 import com.mobile.topmenu.Exit;
 import com.mobile.topmenu.WelcomeScreen;
 
@@ -25,7 +25,7 @@ public class ReturnUtil {
         }
 
         switch (num) {
-            case 1 -> new UesWEI(ci);
+            case 1 -> new WEIMenu(ci);
             case 2 -> new WelcomeScreen();
             default -> new Exit();
         }

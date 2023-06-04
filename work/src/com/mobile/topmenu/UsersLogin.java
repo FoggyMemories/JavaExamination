@@ -1,7 +1,7 @@
 package com.mobile.topmenu;
 
 import com.mobile.data.CustomerInfo;
-import com.mobile.mobilemenu.UesWEI;
+import com.mobile.mobilemenu.WEIMenu;
 import com.mobile.util.CardUtil;
 
 import java.util.HashMap;
@@ -68,7 +68,7 @@ public class UsersLogin {
                         String passWord1 = ci.getPassWord();
                         if (matePassWord(passWord, passWord1)) {
                             System.out.println("您输入的密码正确,登陆成功");
-                            new UesWEI(ci);
+                            new WEIMenu(ci);
                             break loop;
                         } else {
                             System.out.println("*您输入的密码有误,请重新输入密码*");
