@@ -67,6 +67,8 @@ public class UsersRegister {
                 System.out.println("*输入的格式不合法,请重新输入.*");
             } catch (NoneFoundNumberException e) {
                 System.out.println("*请输入 1 ~ 9 之间的整数.*");
+            } catch (IndexOutOfBoundsException e){
+                System.out.println("*输入的选项不存在,请重新输入.*");
             }
         }
 
