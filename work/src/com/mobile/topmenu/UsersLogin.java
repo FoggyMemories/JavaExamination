@@ -19,7 +19,7 @@ public class UsersLogin {
         loop:
         while (true) {
             CustomerInfo c = new CustomerInfo();
-            System.out.print("请输入手机卡号:");
+            System.out.print("请输入卡号:");
             try {
                 String phoneNumber = sc.nextLine();
                 c.setCardNumber(phoneNumber);
@@ -59,7 +59,7 @@ public class UsersLogin {
                         //再从对应的value中获取密码
                         String passWord1 = ci.getPassWord();
                         if (matePassWord(passWord, passWord1)) {
-                            System.out.println("您输入的密码正确");
+                            System.out.println("您输入的密码正确,登陆成功");
                             new UesWEI(ci);
                             break loop;
                         } else {

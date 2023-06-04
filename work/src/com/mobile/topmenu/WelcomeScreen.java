@@ -11,7 +11,7 @@ public class WelcomeScreen {
 
     private static final int LOGIN = 1;
     private static final int REGISTER = 2;
-    private static final int USEWEI = 3;
+    private static final int USE_WEI = 3;
     private static final int RECHARGE = 4;
     private static final int DESCRIPTION = 5;
     private static final int EXIT = 6;
@@ -42,7 +42,7 @@ public class WelcomeScreen {
                 switch (u.getWelcomeNum()) {
                     case LOGIN -> new UsersLogin();
                     case REGISTER -> new UsersRegister();
-                    case USEWEI -> System.out.println("使用WEI");
+                    case USE_WEI -> System.out.println("使用WEI");
                     case RECHARGE -> new TariffRecharge();
                     case DESCRIPTION -> new TariffDescription();
                     case EXIT -> {
