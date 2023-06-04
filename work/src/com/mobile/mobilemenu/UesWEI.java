@@ -14,7 +14,7 @@ public class UesWEI {
     private static final int CANCEL_NETWORK = 5;
 
     static {
-        System.out.println("*****WEI移动用户菜单*****");
+        System.out.println("**********************WEI移动用户菜单**********************");
     }
 
     public UesWEI(CustomerInfo ci) {
