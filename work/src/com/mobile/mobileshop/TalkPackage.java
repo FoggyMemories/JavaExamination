@@ -1,6 +1,6 @@
 package com.mobile.mobileshop;
 
-public class TalkPackage extends ServicePackage {
+public class TalkPackage extends AllServicePackage {
 
     public TalkPackage() {
         super.setTalkTime(500);

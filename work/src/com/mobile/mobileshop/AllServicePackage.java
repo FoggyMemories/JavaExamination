@@ -1,6 +1,6 @@
 package com.mobile.mobileshop;
 
-public abstract class ServicePackage {
+public abstract class AllServicePackage {
 
     private int talkTime;
     private int flow;
@@ -9,10 +9,10 @@ public abstract class ServicePackage {
     private Object pack;
 
 
-    public ServicePackage() {
+    public AllServicePackage() {
     }
 
-    public ServicePackage(int talkTime, int flow, int smsCount, double price, Object pack) {
+    public AllServicePackage(int talkTime, int flow, int smsCount, double price, Object pack) {
         this.talkTime = talkTime;
         this.flow = flow;
         this.smsCount = smsCount;

@@ -1,6 +1,6 @@
 package com.mobile.data;
 
-import com.mobile.mobileshop.ServicePackage;
+import com.mobile.mobileshop.AllServicePackage;
 
 public class CustomerInfo {
     private String cardNumber;
@@ -8,7 +8,7 @@ public class CustomerInfo {
     private String userName;
     private String passWord;
     private int consumerDate;
-    private ServicePackage serPackage;
+    private AllServicePackage serPackage;
     private double customerAmount;
     private int realTalkTime;
     private int realSMSCount;
@@ -19,7 +19,7 @@ public class CustomerInfo {
     public CustomerInfo() {
     }
 
-    public CustomerInfo(String cardNumber, String userName, String passWord, ServicePackage serPackage) {
+    public CustomerInfo(String cardNumber, String userName, String passWord, AllServicePackage serPackage) {
         this.cardNumber = cardNumber;
         this.userName = userName;
         this.passWord = passWord;
@@ -40,7 +40,7 @@ public class CustomerInfo {
      * @param realFlow       实际使用流量
      * @param allPay         需要的额外支出
      */
-    public CustomerInfo(String cardNumber, String type, String userName, String passWord, int consumerDate, ServicePackage serPackage, double customerAmount, int realTalkTime, int realSMSCount, int realFlow, int allPay) {
+    public CustomerInfo(String cardNumber, String type, String userName, String passWord, int consumerDate, AllServicePackage serPackage, double customerAmount, int realTalkTime, int realSMSCount, int realFlow, int allPay) {
         this.cardNumber = cardNumber;
         this.type = type;
         this.userName = userName;
@@ -153,7 +153,7 @@ public class CustomerInfo {
      *
      * @return serPackage
      */
-    public ServicePackage getSerPackage() {
+    public AllServicePackage getSerPackage() {
         return serPackage;
     }
 
@@ -162,7 +162,7 @@ public class CustomerInfo {
      *
      * @param serPackage
      */
-    public void setSerPackage(ServicePackage serPackage) {
+    public void setSerPackage(AllServicePackage serPackage) {
         this.serPackage = serPackage;
     }
 

@@ -1,6 +1,6 @@
 package com.mobile.mobileshop;
 
-public class NetPackage extends ServicePackage {
+public class NetPackage extends AllServicePackage {
 
     public NetPackage() {
         super.setTalkTime(0);

@@ -4,7 +4,7 @@ import com.mobile.service.CallService;
 import com.mobile.service.NetService;
 import com.mobile.service.SendService;
 
-public class SuperPackage extends ServicePackage implements CallService, SendService, NetService {
+public class SuperPackage extends AllServicePackage implements CallService, SendService, NetService {
 
 
     public SuperPackage() {
