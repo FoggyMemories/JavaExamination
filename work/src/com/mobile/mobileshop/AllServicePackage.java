@@ -98,6 +98,7 @@ public abstract class AllServicePackage {
 
 
     public String toString() {
-        return "通话时长:" + talkTime + "分钟/月,上网流量:" + (flow / 1024) + "GB/月,短信条数:" + smsCount + "条/月,资费标准:" + price;
+        return "通话时长:" + talkTime + "分钟/月,上网流量:" + (flow / 1024) +
+                "Gb/月,短信条数:" + smsCount + "条/月,资费标准:" + price;
     }
 }

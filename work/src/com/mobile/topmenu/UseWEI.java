@@ -48,5 +48,7 @@ public class UseWEI {
 
         System.out.println("通知朋友手机换号,发送短信50条");
         System.out.println("不存在此卡的消费记录,已添加一条消费记录");
+
+        new WelcomeScreen();
     }
 }

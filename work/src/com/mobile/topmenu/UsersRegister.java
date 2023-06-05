@@ -153,8 +153,8 @@ public class UsersRegister {
                 if (count < 0) {
                     throw new NoneFoundNumberException();
                 }
-                if (count < 50) {
-                    System.out.println("*预存的最小金额为 50 .*");
+                if (count < ci.getSerPackage().getPrice()) {
+                    System.out.println("*预存金额小于此套餐第一个月的费用.*");
                     break loop;
                 }
                 break;
