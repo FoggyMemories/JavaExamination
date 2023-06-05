@@ -1,5 +1,7 @@
 package com.mobile.mobileshop;
 
+//网虫套餐
+
 public class NetPackage extends AllServicePackage {
 
     public NetPackage() {
