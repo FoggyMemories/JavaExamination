@@ -1,5 +1,7 @@
 package com.mobile.mobileshop;
 
+//所有的服务
+
 public abstract class AllServicePackage {
 
     private int talkTime;
