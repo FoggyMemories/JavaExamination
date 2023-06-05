@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 import static com.mobile.util.JudgeUtil.judgePhoneNumber;
 
+//使用WEI
+
 public class UseWEI {
     public UseWEI() {
         Scanner sc = new Scanner(System.in);
