@@ -1,7 +1,8 @@
 package com.mobile.topmenu;
 
 
-//退出界面
+//程序退出界面
+
 public class Exit {
     public Exit(){
         System.out.println("谢谢使用,再见.");
