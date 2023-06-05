@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 //进行对代码片段测试
+
 public class Test {
     public static void main(String[] args) {
 
