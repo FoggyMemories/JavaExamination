@@ -1,5 +1,7 @@
 package com.mobile.topmenu;
 
+//资费详情
+
 public class BillingDescription {
     private double talkPrice;
     private double flowPrice;
