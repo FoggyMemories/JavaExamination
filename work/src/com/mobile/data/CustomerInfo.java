@@ -3,6 +3,8 @@ package com.mobile.data;
 import com.mobile.errors.NameOutOfBoundsException;
 import com.mobile.mobileshop.AllServicePackage;
 
+//用户Javabean
+
 public class CustomerInfo {
 
     private String cardNumber;
