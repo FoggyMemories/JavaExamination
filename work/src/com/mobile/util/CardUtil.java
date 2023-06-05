@@ -7,6 +7,8 @@ import com.mobile.mobileshop.TalkPackage;
 
 import java.util.HashMap;
 
+//已添加默认的用户库
+
 public class CardUtil {
     public HashMap<String, CustomerInfo> getHashMap() {
         HashMap<String, CustomerInfo> cards = new HashMap<>();
