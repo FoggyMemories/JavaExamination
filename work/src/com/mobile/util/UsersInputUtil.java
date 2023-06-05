@@ -3,7 +3,8 @@ package com.mobile.util;
 import com.mobile.errors.NoneFoundNumberException;
 
 
-//用户JavaBean
+//用户输入工具
+
 public class UsersInputUtil {
     private int WelcomeNum;
     private int WEIMenuNum;
