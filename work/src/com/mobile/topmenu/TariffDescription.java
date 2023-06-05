@@ -5,6 +5,7 @@ import com.mobile.mobileshop.SuperPackage;
 import com.mobile.mobileshop.TalkPackage;
 
 //资费说明
+
 public class TariffDescription {
     public TariffDescription() {
         BillingDescription b = new BillingDescription(0.2, 0.1, 0.1);
