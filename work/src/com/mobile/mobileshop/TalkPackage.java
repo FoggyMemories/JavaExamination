@@ -1,5 +1,7 @@
 package com.mobile.mobileshop;
 
+//话痨套餐
+
 public class TalkPackage extends AllServicePackage {
 
     public TalkPackage() {
