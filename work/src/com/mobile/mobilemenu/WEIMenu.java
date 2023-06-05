@@ -7,6 +7,8 @@ import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
 
+//WEI移动用户菜单
+
 public class WEIMenu {
     private static final int BILLING_QUERY = 1;
     private static final int MARGIN_QUERY = 2;
