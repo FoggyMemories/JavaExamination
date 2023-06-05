@@ -1,9 +1,6 @@
 package com.mobile.mobileshop;
 
-import com.mobile.data.CustomerInfo;
-import com.mobile.service.CallService;
-import com.mobile.service.NetService;
-import com.mobile.service.SendService;
+//超人套餐
 
 public class SuperPackage extends AllServicePackage {
 
