@@ -24,8 +24,13 @@ public class TariffRecharge {
             String strChargeNum = null;
             loop:
             try {
-                System.out.print("请输入充值卡号:");
+                System.out.println("请输入充值卡号(如需退出登陆,请输入:exit)");
+                System.out.print(":");
                 strPhoneNumber = sc.nextLine();
+                if (strPhoneNumber.equalsIgnoreCase("exit")) {
+                    new WelcomeScreen();
+                    break;
+                }
                 //用于判断电话号码是否合法
                 Long.parseLong(strPhoneNumber);
                 if (!judgePhoneNumber(strPhoneNumber)) {
