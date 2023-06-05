@@ -7,6 +7,7 @@ import com.mobile.mobileshop.AllServicePackage;
 import com.mobile.mobileshop.NetPackage;
 import com.mobile.mobileshop.SuperPackage;
 import com.mobile.mobileshop.TalkPackage;
+import com.mobile.util.ReturnUtil;
 import com.mobile.util.UsersInputUtil;
 import com.mobile.util.JudgeUtil;
 
@@ -67,7 +68,7 @@ public class UsersRegister {
                 System.out.println("*输入的格式不合法,请重新输入.*");
             } catch (NoneFoundNumberException e) {
                 System.out.println("*请输入 1 ~ 9 之间的整数.*");
-            } catch (IndexOutOfBoundsException e){
+            } catch (IndexOutOfBoundsException e) {
                 System.out.println("*输入的选项不存在,请重新输入.*");
             }
         }
@@ -163,11 +164,15 @@ public class UsersRegister {
         }
 
         //提示注册成功
-        System.out.println("***********************注册成功***********************");
+        System.out.println("**************************注册成功**************************");
+        //重置余额
+        double remainCustomerAmount = ci.getCustomerAmount() + count - ci.getSerPackage().getPrice();
+        ci.setCustomerAmount(remainCustomerAmount);
         System.out.println("卡号:" + ci.getCardNumber() + " 用户名:" +
-                ci.getUserName() + " 当前余额:" + (ci.getCustomerAmount() + count - ci.getSerPackage().getPrice()));
+                ci.getUserName() + " 当前余额:" + (remainCustomerAmount));
         System.out.println(ci.getSerPackage().toString());
 
+        new ReturnUtil(ci);
 
         //释放资源
         sc.close();

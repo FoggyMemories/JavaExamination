@@ -15,7 +15,7 @@ public class WEIMenu {
     private static final int CANCEL_NETWORK = 5;
 
     static {
-        System.out.println("*************************WEI移动用户菜单*************************");
+        System.out.println("****************************WEI移动用户菜单****************************");
     }
 
     public WEIMenu(CustomerInfo ci) {
@@ -28,6 +28,7 @@ public class WEIMenu {
             print();
             try {
                 System.out.println("请选择,其他键返回上一级");
+                System.out.print(":");
                 //将输入的字符串格式的数字转化为int类型的字符串
                 String strNum = sc.nextLine();
                 int num = Integer.parseInt(strNum);

@@ -16,12 +16,9 @@ public class WelcomeScreen {
     private static final int DESCRIPTION = 5;
     private static final int EXIT = 6;
 
-    static {
-        //欢迎界面字符
-        System.out.println("**********************欢迎使用WEI移动业务大厅**********************");
-    }
-
     public static void print() {
+        //欢迎界面字符
+        System.out.println("************************欢迎使用WEI移动业务大厅************************");
         System.out.println("------------------------------------------------------------------------");
         System.out.println("1.用户登录\t2.用户注册\t3.使用WEI\t4.话费充值\t5.资费说明\t6.退出系统");
         System.out.println("------------------------------------------------------------------------");

@@ -13,8 +13,11 @@ public class CustomerInfo {
     private AllServicePackage serPackage;
     private double customerAmount;
     private int realTalkTime;
+    private int remainTalkTime;
     private int realSMSCount;
+    private int remainSMSCount;
     private int realFlow;
+    private int remainFlow;
     private int allPay;
 
 
@@ -28,6 +31,7 @@ public class CustomerInfo {
         this.serPackage = serPackage;
     }
 
+
     /**
      * @param cardNumber     卡号
      * @param type           套餐类型(字符串)
@@ -37,11 +41,17 @@ public class CustomerInfo {
      * @param serPackage     套餐类型
      * @param customerAmount 账户余额
      * @param realTalkTime   实际通话时长
+     * @param remainTalkTime 剩余通话时长
      * @param realSMSCount   实际短信条数
+     * @param remainSMSCount 剩余短信条数
      * @param realFlow       实际使用流量
+     * @param remainFlow     剩余使用流量
      * @param allPay         需要的额外支出
      */
-    public CustomerInfo(String cardNumber, String type, String userName, String passWord, int consumerDate, AllServicePackage serPackage, double customerAmount, int realTalkTime, int realSMSCount, int realFlow, int allPay) {
+    public CustomerInfo(String cardNumber, String type, String userName, String passWord,
+                        int consumerDate, AllServicePackage serPackage, double customerAmount,
+                        int realTalkTime, int remainTalkTime, int realSMSCount, int remainSMSCount,
+                        int realFlow, int remainFlow, int allPay) {
         this.cardNumber = cardNumber;
         this.type = type;
         this.userName = userName;
@@ -50,8 +60,11 @@ public class CustomerInfo {
         this.serPackage = serPackage;
         this.customerAmount = customerAmount;
         this.realTalkTime = realTalkTime;
+        this.remainTalkTime = remainTalkTime;
         this.realSMSCount = realSMSCount;
+        this.remainSMSCount = remainSMSCount;
         this.realFlow = realFlow;
+        this.remainFlow = remainFlow;
         this.allPay = allPay;
     }
 
@@ -258,5 +271,59 @@ public class CustomerInfo {
      */
     public void setAllPay(int allPay) {
         this.allPay = allPay;
+    }
+
+    /**
+     * 获取
+     *
+     * @return remainTalkTime
+     */
+    public int getRemainTalkTime() {
+        return remainTalkTime;
+    }
+
+    /**
+     * 设置
+     *
+     * @param remainTalkTime
+     */
+    public void setRemainTalkTime(int remainTalkTime) {
+        this.remainTalkTime = remainTalkTime;
+    }
+
+    /**
+     * 获取
+     *
+     * @return remainSMSCount
+     */
+    public int getRemainSMSCount() {
+        return remainSMSCount;
+    }
+
+    /**
+     * 设置
+     *
+     * @param remainSMSCount
+     */
+    public void setRemainSMSCount(int remainSMSCount) {
+        this.remainSMSCount = remainSMSCount;
+    }
+
+    /**
+     * 获取
+     *
+     * @return remainFlow
+     */
+    public int getRemainFlow() {
+        return remainFlow;
+    }
+
+    /**
+     * 设置
+     *
+     * @param remainFlow
+     */
+    public void setRemainFlow(int remainFlow) {
+        this.remainFlow = remainFlow;
     }
 }

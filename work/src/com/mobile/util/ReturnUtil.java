@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class ReturnUtil {
     public ReturnUtil(CustomerInfo ci) {
+        System.out.println("------------------------------------------------------------------------");
         System.out.println("返回用户菜单请按 (1) , 返回业务大厅请按 (2) , 点击其他按键退出");
         Scanner sc = new Scanner(System.in);
 
