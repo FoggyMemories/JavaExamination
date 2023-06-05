@@ -3,10 +3,6 @@ package com.mobile.topmenu;
 
 import com.mobile.data.CustomerInfo;
 import com.mobile.errors.NoneFoundNumberException;
-import com.mobile.mobileshop.AllServicePackage;
-import com.mobile.mobileshop.NetPackage;
-import com.mobile.mobileshop.SuperPackage;
-import com.mobile.mobileshop.TalkPackage;
 import com.mobile.util.ReturnUtil;
 import com.mobile.util.UsersInputUtil;
 import com.mobile.util.JudgeUtil;
@@ -14,6 +10,8 @@ import com.mobile.util.JudgeUtil;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+
+import static com.mobile.util.TurnToUtil.turn;
 
 //用户注册
 
@@ -177,21 +175,5 @@ public class UsersRegister {
 
         //释放资源
         sc.close();
-    }
-
-    //将套餐数字转化为具体的套餐种类
-    public static AllServicePackage turn(int num) {
-        switch (num) {
-            case 1 -> {
-                return new TalkPackage();
-            }
-            case 2 -> {
-                return new NetPackage();
-            }
-            case 3 -> {
-                return new SuperPackage();
-            }
-            default -> throw new NoneFoundNumberException();
-        }
     }
 }
