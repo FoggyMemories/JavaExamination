@@ -7,6 +7,8 @@ import com.mobile.topmenu.WelcomeScreen;
 
 import java.util.Scanner;
 
+//返回上一级工具
+
 public class ReturnUtil {
     public ReturnUtil(CustomerInfo ci) {
         System.out.println("------------------------------------------------------------------------");
