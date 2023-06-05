@@ -2,9 +2,7 @@ package com.mobile.topmenu;
 
 
 import com.mobile.data.CustomerInfo;
-import com.mobile.mobilemenu.BillingQuery;
 import com.mobile.util.CardUtil;
-import com.mobile.util.ReturnUtil;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -12,6 +10,7 @@ import java.util.Scanner;
 import static com.mobile.util.JudgeUtil.judgePhoneNumber;
 
 //话费充值
+
 public class TariffRecharge {
     public TariffRecharge() {
         //导入用户库看看是否存在此用户
