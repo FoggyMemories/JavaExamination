@@ -4,6 +4,7 @@ import com.mobile.errors.NoneFoundNumberException;
 import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
+import java.io.IOException;
 
 
 //欢迎界面
@@ -28,6 +29,18 @@ public class WelcomeScreen {
     }
 
     public WelcomeScreen() {
+
+        try {
+            // 执行系统命令来清屏
+            if (System.getProperty("os.name").contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
         Scanner sc = new Scanner(System.in);
         UsersInputUtil u = new UsersInputUtil();
         loop:
