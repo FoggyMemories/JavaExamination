@@ -4,6 +4,8 @@ import com.mobile.data.CustomerInfo;
 import com.mobile.mobileshop.AllServicePackage;
 import com.mobile.topmenu.BillingDescription;
 
+//用户使用
+
 public class Consume implements CallService, NetService, SendService {
 
     BillingDescription b = new BillingDescription(0.2, 0.1, 0.1);
