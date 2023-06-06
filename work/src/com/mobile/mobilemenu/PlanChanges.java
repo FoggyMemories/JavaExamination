@@ -6,7 +6,6 @@ import com.mobile.mobileshop.NetPackage;
 import com.mobile.mobileshop.SuperPackage;
 import com.mobile.mobileshop.TalkPackage;
 import com.mobile.util.ReturnUtil;
-import com.mobile.util.UsersInputUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,9 +19,6 @@ public class PlanChanges {
     public PlanChanges(CustomerInfo ci) {
 
         Scanner sc = new Scanner(System.in);
-
-        //创建新的用户Util输入判断
-        UsersInputUtil uiu = new UsersInputUtil();
 
         //新建列表,将可选套餐装填
         ArrayList<String> typeList = new ArrayList<>();
@@ -50,10 +46,12 @@ public class PlanChanges {
 
             try {
                 num = Integer.parseInt(strNum);
-                uiu.setChooseTypeNum(num);
+                if(num < 0 || num > 3){
+                    throw new NoneFoundNumberException();
+                }
 
                 //将纯数字转化为对应的套餐
-                ci.setSerPackage(turn(uiu.getChooseTypeNum()));
+                ci.setSerPackage(turn(num));
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("*输入的格式不合法,请重新输入套餐序号.*");
