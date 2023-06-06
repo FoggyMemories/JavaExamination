@@ -3,7 +3,6 @@ package com.mobile.mobilemenu;
 
 import com.mobile.data.CustomerInfo;
 import com.mobile.topmenu.WelcomeScreen;
-import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
 
@@ -23,7 +22,6 @@ public class WEIMenu {
     public WEIMenu(CustomerInfo ci) {
         System.out.println("------------------------------------------------------------------------");
         Scanner sc = new Scanner(System.in);
-        UsersInputUtil u = new UsersInputUtil();
 
         loop:
         while (true) {
@@ -34,9 +32,8 @@ public class WEIMenu {
                 //将输入的字符串格式的数字转化为int类型的字符串
                 String strNum = sc.nextLine();
                 int num = Integer.parseInt(strNum);
-                u.setWEIMenuNum(num);
 
-                switch (u.getWEIMenuNum()) {
+                switch (num) {
                     case BILLING_QUERY -> new BillingQuery(ci);
                     case MARGIN_QUERY -> new MarginQuery(ci);
                     case PRINT_LIST -> new PrintList(ci);
