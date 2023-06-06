@@ -4,7 +4,6 @@ package com.mobile.topmenu;
 import com.mobile.data.CustomerInfo;
 import com.mobile.errors.NoneFoundNumberException;
 import com.mobile.util.ReturnUtil;
-import com.mobile.util.UsersInputUtil;
 import com.mobile.util.JudgeUtil;
 
 import java.util.ArrayList;
@@ -43,9 +42,6 @@ public class UsersRegister {
 
         System.out.println("*****************************************************");
 
-        //创建新的用户Util输入判断
-        UsersInputUtil uiu = new UsersInputUtil();
-
         //创建新的用户对象接收新建用户
         CustomerInfo ci = new CustomerInfo();
 
@@ -59,7 +55,9 @@ public class UsersRegister {
             String strNum = sc.nextLine();
             try {
                 int num = Integer.parseInt(strNum);
-                uiu.setChooseCardNum(num);
+                if(num < 0 || num > 9){
+                    throw new NoneFoundNumberException();
+                }
                 //将用户选择的号码存储在新建用户之中
                 ci.setCardNumber(cardNumList.get(num - 1));
                 break;
@@ -93,10 +91,12 @@ public class UsersRegister {
 
             try {
                 int num = Integer.parseInt(strNum);
-                uiu.setChooseTypeNum(num);
+                if(num < 0 || num > 3){
+                    throw new NoneFoundNumberException();
+                }
 
                 //将纯数字转化为对应的套餐
-                ci.setSerPackage(turn(uiu.getChooseTypeNum()));
+                ci.setSerPackage(turn(num));
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("*输入的格式不合法,请重新输入套餐序号.*");
