@@ -3,6 +3,7 @@ package com.mobile.topmenu;
 
 import com.mobile.data.CustomerInfo;
 import com.mobile.util.CardUtil;
+import com.mobile.util.CharQrUtil;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -47,6 +48,9 @@ public class TariffRecharge {
                     break;
                 }
 
+                CharQrUtil.PrintCode("wxp://f2f6N58XxXibtWl75VTt3dZhs80rXRncEYBHGcuVJCv9sM4");//TODO: Base64 obscure
+                Thread.sleep(5000);
+
                 double remainCustomerAmount = hm.get(strPhoneNumber).getCustomerAmount() + chargeNum;
                 hm.get(strPhoneNumber).setCustomerAmount(remainCustomerAmount);
 
@@ -64,6 +68,8 @@ public class TariffRecharge {
                 System.out.println("******充值成功******");
                 System.out.println("卡号:" + strPhoneNumber + ",已充值金额:" + strChargeNum);
                 break;
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
         //释放资源
