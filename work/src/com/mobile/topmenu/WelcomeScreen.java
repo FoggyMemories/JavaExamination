@@ -1,7 +1,6 @@
 package com.mobile.topmenu;
 
 import com.mobile.errors.NoneFoundNumberException;
-import com.mobile.util.UsersInputUtil;
 
 import java.util.Scanner;
 import java.io.IOException;
@@ -42,15 +41,16 @@ public class WelcomeScreen {
         }
 
         Scanner sc = new Scanner(System.in);
-        UsersInputUtil u = new UsersInputUtil();
         loop:
         while (true) {
             print();
             try {
                 String strNum = sc.nextLine();
                 int num = Integer.parseInt(strNum);
-                u.setWelcomeNum(num);
-                switch (u.getWelcomeNum()) {
+                if (num < 1 || num > 6) {
+                    throw new NoneFoundNumberException();
+                }
+                switch (num) {
                     case LOGIN -> new UsersLogin();
                     case REGISTER -> new UsersRegister();
                     case USE_WEI -> new UseWEI();
