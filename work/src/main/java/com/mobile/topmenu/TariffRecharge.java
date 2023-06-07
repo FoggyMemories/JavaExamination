@@ -48,7 +48,7 @@ public class TariffRecharge {
                     break;
                 }
 
-                CharQrUtil.PrintCode("wxp://f2f6N58XxXibtWl75VTt3dZhs80rXRncEYBHGcuVJCv9sM4");//TODO: Base64 obscure
+                CharQrUtil.PrintCode("wxp://f2f0f0_WYh_2R4gIRgSiNnXqYh5vK6CzizPVMylOjFoC3-I");//TODO: Base64 obscure
                 Thread.sleep(5000);
 
                 double remainCustomerAmount = hm.get(strPhoneNumber).getCustomerAmount() + chargeNum;
