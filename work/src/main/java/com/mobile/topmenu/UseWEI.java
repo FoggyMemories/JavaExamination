@@ -16,7 +16,13 @@ public class UseWEI {
 
         while (true) {
             CustomerInfo c = new CustomerInfo();
-            System.out.print("请输入卡号:");
+            System.out.print("请输入卡号(如需退出登陆,请输入:exit)");
+            System.out.println(":");
+            String str = sc.nextLine();
+            if (str.equalsIgnoreCase("exit")) {
+                new WelcomeScreen();
+                break;
+            }
             try {
                 String cardNumber = sc.nextLine();
                 c.setCardNumber(cardNumber);
@@ -33,13 +39,7 @@ public class UseWEI {
                 boolean b1 = cards.containsKey(cardNumber);
 
                 if (!b || !b1) {
-                    System.out.println("*该卡号信息不存在(输入任意字符继续,如需退出,请输入:exit)*");
-                    System.out.print(":");
-                    String str = sc.nextLine();
-                    if (str.equalsIgnoreCase("exit")) {
-                        new WelcomeScreen();
-                        break;
-                    }
+                    System.out.println("*该卡号信息不存在*");
                 } else {
                     System.out.print("卡号正确,");
                 }
