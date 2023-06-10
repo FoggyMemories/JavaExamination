@@ -2,9 +2,9 @@ package com.mobile.mobilemenu;
 
 import com.mobile.data.CustomerInfo;
 import com.mobile.errors.NoneFoundNumberException;
-import com.mobile.mobileshop.NetPackage;
-import com.mobile.mobileshop.SuperPackage;
-import com.mobile.mobileshop.TalkPackage;
+import com.mobile.entity.NetPackage;
+import com.mobile.entity.SuperPackage;
+import com.mobile.entity.TalkPackage;
 import com.mobile.util.ReturnUtil;
 
 import java.util.ArrayList;

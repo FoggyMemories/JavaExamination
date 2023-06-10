@@ -1,8 +1,8 @@
 package com.mobile.topmenu;
 
-import com.mobile.mobileshop.NetPackage;
-import com.mobile.mobileshop.SuperPackage;
-import com.mobile.mobileshop.TalkPackage;
+import com.mobile.entity.NetPackage;
+import com.mobile.entity.SuperPackage;
+import com.mobile.entity.TalkPackage;
 
 //资费说明
 

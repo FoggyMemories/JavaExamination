@@ -1,4 +1,4 @@
-package com.mobile.mobileshop;
+package com.mobile.entity;
 
 //所有的服务
 
@@ -7,7 +7,7 @@ public abstract class AllServicePackage {
     private int talkTime;
     private int flow;
     private int smsCount;
-    private double price;
+    protected double price;
 
 
     public AllServicePackage() {
@@ -103,4 +103,6 @@ public abstract class AllServicePackage {
         return "通话时长:" + talkTime + "分钟/月,上网流量:" + (flow / 1024) +
                 "Gb/月,短信条数:" + smsCount + "条/月,资费标准:" + price;
     }
+
+    public abstract void showInfo();
 }

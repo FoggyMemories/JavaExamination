@@ -1,7 +1,7 @@
 package com.mobile.data;
 
 import com.mobile.errors.NameOutOfBoundsException;
-import com.mobile.mobileshop.AllServicePackage;
+import com.mobile.entity.AllServicePackage;
 
 //用户Javabean
 
